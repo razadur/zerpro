@@ -1,0 +1,25 @@
+.candidate_panel{
+	border:1px solid #163238;
+	}
+.candidate_panel h2{
+	padding:15px;
+	}
+[type="button"] {
+    width: 100%;
+	text-align:left;
+}
+.btn-primary{
+	background:#337381;
+	border-color:#4194A6;
+	}
+.submit_btn{
+border:1px solid #4194A6;
+color:#4194A6;}
+
+.btn-default.active, .btn-default:active, .btn-default:hover, .open > .btn-default.dropdown-toggle
+{
+background:#4194A6 !important;
+color:#ffffff;
+}
+	
+	
