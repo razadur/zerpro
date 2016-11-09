@@ -254,6 +254,7 @@
         });
     }
     function deleteNewImage(id){
-        $("#newImage"+id).html('');
+        $("#newImage"+id).remove();
+        $("#files"+id).remove();
     }
 </script>

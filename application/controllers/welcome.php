@@ -187,11 +187,12 @@ mail($user_email,"New Registration",$msg);
 		die();*/
 		
 		
-		$this->load->model('admin_panel_model');
-		   $this->admin_panel_model->save_new_user_registration($data);
-		   
+	    $this->load->model('admin_panel_model');
+        if($this->admin_panel_model->save_new_user_registration($data) == 1){
 		   $this->session->set_flashdata('flasherror', 'Your message sent successfully!');
-		
+        }else{
+            $this->session->set_flashdata('flasherror', 'This e-mail address already added!');
+        }
 		redirect("index.php/welcome/registration");
 		//$this->load->view('new_user_registration');
 	

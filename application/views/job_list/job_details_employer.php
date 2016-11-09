@@ -1,5 +1,5 @@
 <?php include('header.php');?>
-	
+
 
 
 
@@ -142,7 +142,6 @@
 									<h5>$<?php echo $get_job_shortlist->expeted_salary; ?>dff</h5>
 								</div>
 								<div class="action-button">
-									
 									<button class="btn btn-block btn-primary">Contact</button>
 								</div>
 								
@@ -158,7 +157,7 @@
 					<?php }else{?>
 					
 					<div class="applicants">
-					<h3>applicants</h3>
+					<h3>Applicants</h3>
 					<?php if ($this->session->flashdata('flasherror')) { ?>
         <div class="alert alert-success"> <?= $this->session->flashdata('flasherror') ?> </div>
     <?php } ?>
@@ -226,10 +225,10 @@
 									<input type="hidden" name="job_id" value="<?php echo $get_job_details->id; ?>" />
 								<input type="hidden" name="freelancer_id" value="<?php echo $get_job_applicant->user_id; ?>" />
                                 <input type="hidden" name="sender_by" value="<?php echo $this->session->userdata('userid') ?>"/>
-									
-									<input class="btn btn-primary btn-block" type="submit" value="Shortlisted" name="submit" />
+
+									<input class="btn btn-block btn-primary" type="submit" value="Shortlisted" name="submit" />
 								</form>
-								
+
 								
 								
 								
@@ -238,8 +237,27 @@
 									
 									<!--<button class="btn btn-block btn-primary">Contact</button>-->
 									
-									<button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#myModal_<?php echo $get_job_applicant->user_id; ?>">Contact</button>
-									
+									<button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#myModal_<?php echo $get_job_applicant->user_id;?>" style="margin-top:5px">Contact</button>
+                                    <?php
+                                    if($get_job_applicant->hiring_status == 1){
+                                    ?>
+                                    <button type="button" class="btn btn-block btn-primary" >Hired</button>
+                                    <?php }else{?>
+                                    <button type="button" id="hire_btn" class="btn btn-block btn-primary" value="<?php echo $this->session->userdata('userid') ?>" onclick="hire(<?php echo $get_job_details->id ?>,<?php echo $get_job_applicant->user_id ?>)">Hire</button>
+                                    <?php }?>
+<script>
+    function hire(jobId,applicantId){
+        var data = 'id='+jobId+'&applicantId='+applicantId;
+        $.ajax({
+             url:'<?php echo base_url();?>index.php/Job_list/hire',
+             data: data,
+             type:'POST',
+             success:function(data){
+                 document.getElementById('hire_btn').firstChild.data = 'Hired';
+             }
+         });
+    }
+</script>
 									
 									
 									

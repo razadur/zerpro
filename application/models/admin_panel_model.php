@@ -15,10 +15,23 @@ class Admin_panel_Model extends CI_Model {
 
 	public function save_new_user_registration($data)
     {
-		//print_r($data);
-		//die();
-		 $this->db->insert('user_registration_info',$data);
-       // $this->db->insert('school_class',$data);
+        //duplicate email checking
+        $this->db->select('*');
+        $this->db->from('user_registration_info');
+        $this->db->where('user_email',$data['user_email']);
+        $query_result=$this->db->get();
+        $result=$query_result->num_rows();
+        if($result == 0){
+            $this->db->insert('user_registration_info',$data);
+            $dataUp['user_id'] = $this->db->insert_id();
+            $dataUp['user_type'] = $data['user_type'];
+            $dataUp['name'] = $data['first_name'].' '.$data['last_name'];
+            $dataUp['user_email'] = $data['user_email'];
+            $this->db->insert('`user_profile_info`',$dataUp);
+        }else{
+            return 0;
+        }
+        return 1;
     }
 	public function save_message($data)
     {
@@ -1669,6 +1682,11 @@ class Admin_panel_Model extends CI_Model {
     public function deleteImage($id){
         $this->db->where('id', $id);
         $this->db->delete('image_upload');
+    }
+    public function hireProcess($applicantId,$jobId,$data){
+        $this->db->where('job_id', $jobId);
+        $this->db->where('freelancer_id', $applicantId);
+        $this->db->update('job_applications',$data);
     }
 }
 

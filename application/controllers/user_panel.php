@@ -420,6 +420,7 @@ class User_panel extends MY_Controller{
         $data =  $this->input->post('id');
         $this->load->model('admin_panel_model');
         $this->admin_panel_model->deleteImage($data);
+        echo 'azad';
     }
 }
 

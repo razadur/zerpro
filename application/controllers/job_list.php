@@ -114,8 +114,8 @@ class Job_list extends MY_Controller {
 		  
 		  $user_email = $data['get_job_details']->user_email;
 		 $data['employeer_info'] = $this->admin_panel_model->employeer_info($user_email);
-		 
-		/* print_r($data['employeer_info']);
+		 /*echo '<pre>';
+		 print_r($data);
 		 die();*/
 		
 		if($this->session->userdata('user_type') == 'Frelancer')
@@ -388,7 +388,11 @@ class Job_list extends MY_Controller {
 		
 		$this->load->view('job_list/short_list',$data);
 	}
-	
+	public function hire(){
+        $data['hiring_status'] = 1;
+        $this->load->model('admin_panel_model');
+        $this->admin_panel_model->hireProcess($this->input->post('applicantId'),$this->input->post('id'),$data);
+    }
 	
 }
 
