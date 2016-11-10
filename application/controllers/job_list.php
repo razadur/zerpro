@@ -393,7 +393,33 @@ class Job_list extends MY_Controller {
         $this->load->model('admin_panel_model');
         $this->admin_panel_model->hireProcess($this->input->post('applicantId'),$this->input->post('id'),$data);
     }
-	
+
+    //open and hired jobs only
+    public function onGoingJob(){
+        $user_type = $this->session->userdata('user_type');
+        $userId = $this->session->userdata('userid');
+
+        //if($user_type=='Frelancer'){
+            $this->load->model('admin_panel_model');
+            $data['onGoing_job_ids'] = $this->admin_panel_model->onGoingJobs($userId);
+        /*}else{
+            $this->load->model('admin_panel_model');
+
+            $data['onGoing_job_ids'] = $this->admin_panel_model->get_job_message_employeer($userId);
+        }*/
+        //print_r($data);
+        //die();
+
+        $this->load->view('onGoingJobEmployer',$data);
+        //$this->load->view('message',$data);
+        /*print_r($data['messages']);
+        die();*/
+    }
+    public function closeJob(){
+        $data['status'] = 0;
+        $this->load->model('admin_panel_model');
+        $this->admin_panel_model->closeJobProcess($this->input->post('id'),$data);
+    }
 }
 
 /* End of file welcome.php */

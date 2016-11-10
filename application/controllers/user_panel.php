@@ -35,11 +35,11 @@ class User_panel extends MY_Controller{
 
 			if($data['get_user_type'] == 'Frelancer')
 			{
-				if($data['user_details_info'])
-				{
-					$this->load->view('frelancer_main',$data);
-				}
-				else
+//				if($data['user_details_info'])
+//				{
+//					$this->load->view('frelancer_main',$data);
+//				}
+//				else
 				{
 					$this->load->view('frelancer_main_view',$data);
 					//$this->load->view('frelancer_main',$data);
@@ -49,11 +49,11 @@ class User_panel extends MY_Controller{
 			elseif($data['get_user_type'] == 'Employeer')
 			{
 				
-				if($data['user_details_info'])
-				{
-					$this->load->view('employee_main',$data);
-				}
-				else
+//				if($data['user_details_info'])
+//				{
+//					$this->load->view('employee_main',$data);
+//				}
+//				else
 				{
 					$this->load->view('employee_main_view',$data);
 					//$this->load->view('frelancer_main',$data);

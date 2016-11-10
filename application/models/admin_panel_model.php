@@ -1688,6 +1688,23 @@ class Admin_panel_Model extends CI_Model {
         $this->db->where('freelancer_id', $applicantId);
         $this->db->update('job_applications',$data);
     }
+    public function onGoingJobs($id){
+        $FreEmp = ($this->session->userdata('user_type')) == 'Frelancer' ? 'freelancer_id' : 'manage_job.user_id';
+        $this->db->select('manage_job.id,manage_job.user_id,job_title,job_description,manage_job.category,budget,`experience`,qualification,vacancy_type,user_profile_info.user_id fl_id,name');
+        $this->db->from('manage_job');
+        $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
+        $this->db->join('user_profile_info', 'user_profile_info.user_id = job_applications.freelancer_id');
+        $this->db->where($FreEmp,$id);
+        $this->db->where('hiring_status',1);
+        $this->db->where('status',1);
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
+    public function closeJobProcess($jobId,$data){
+        $this->db->where('id', $jobId);
+        $this->db->update('manage_job',$data);
+    }
 }
 
 ?>
