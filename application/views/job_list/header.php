@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>style.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>style.css">
 	<script src="<?php echo base_url();?>js/modernizr-custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 	<header>
@@ -38,7 +39,7 @@
 					<ul class="find-button">
 						<li><a href="#" class="btn btn-borderd">Find a job</a></li>
 						<li><a href="#" class="btn btn-borderd">Find an Expert</a></li>
-					</ul>
+                    </ul>
 				</div>
 			</div>
 		</div>

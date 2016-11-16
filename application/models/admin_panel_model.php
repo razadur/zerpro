@@ -374,14 +374,14 @@ class Admin_panel_Model extends CI_Model {
 	
 	public function get_job_lists()
     {
-       $this->db->select('manage_job.*,user_profile_info.user_pic_one');   
+        $this->db->select('manage_job.*,user_profile_info.user_pic_one');
 		$this->db->from('manage_job');
 		$this->db->join('user_profile_info', 'manage_job.user_email = user_profile_info.user_email');
 	   
 	  
         $query_result=$this->db->get();
         $result=$query_result->result();
-        return $result; 
+        return $result;
     }
 	
 	public function get_employeer_short_lists($user_email)
@@ -1704,7 +1704,62 @@ class Admin_panel_Model extends CI_Model {
     public function closeJobProcess($jobId,$data){
         $this->db->where('id', $jobId);
         $this->db->update('manage_job',$data);
+        $feedbackData['job_id'] = $jobId;
+        $this->db->insert('job_feedback',$feedbackData);
+    }
+    public function jobFeedback($id=''){
+        $this->db->select('job_feedback.id, job_feedback.job_id, job_title,
+                            user_name employer ,emp_free,emp_free_msg,
+                            user_profile_info.name AS freelancer,free_emp,free_emp_msg');
+        $this->db->from('job_feedback');
+        $this->db->join('manage_job', 'manage_job.id = job_feedback.job_id');
+        $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
+        $this->db->join('user_profile_info', 'user_profile_info.id = job_applications.freelancer_id');
+        if(!empty($id)){
+            $this->db->where('manage_job.id',$id);
+        }else{
+            $this->db->where("free_emp is null or  free_emp = ''");
+            $this->db->where("free_emp_msg is null or free_emp = ''");
+        }
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
+    public function feedbackSendProcess($data,$jobId){
+        $this->db->where('job_id', $jobId);
+        $this->db->update('job_feedback',$data);
+    }
+    public function filteredJob($data){
+        //print_r($data);
+        $this->db->select('manage_job.*,user_profile_info.user_pic_one');
+        $this->db->from('manage_job');
+        $this->db->join('user_profile_info', 'manage_job.user_email = user_profile_info.user_email');
+        if(!empty($data['search'])){
+            $search = $data['search']; $this->db->where("CONCAT( job_title, job_description) LIKE '%$search%'");
+        }
+        if(!empty($data['hour'])){
+            $hour = $data['hour'];
+            $this->db->where("entry_date BETWEEN ADDTIME( NOW(), '-$hour:00:00') AND NOW()");
+        }
+        if(!empty($data['vacancyType'])){
+            $vt = $data['vacancyType']=='f'? 'fr':'lo';
+            $this->db->where("LOWER(vacancy_type) LIKE '%$vt%'");
+        }
+        if($data['SpecialtyCount']>1){
+            $count = $data['SpecialtyCount'];
+            for($i=1;$i<$count;$i++){
+                $var = 'Specialty'.$i;
+                if(!empty($data[$var])){
+                    $d = $data[$var];
+                    $this->db->where("manage_job.spcialization LIKE CONCAT('%',(SELECT spcialization FROM spcialization WHERE id = $d), '%')");
+                }
+            }
+        }
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
     }
 }
-
 ?>
+
+

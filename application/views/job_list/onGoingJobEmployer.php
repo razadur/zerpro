@@ -17,9 +17,6 @@
 	width:25%;
 	}
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-
 	<section class="main-containt">
 		<div class="container">
 			<div class="row">
@@ -108,7 +105,8 @@
             data: data,
             type:'POST',
             success:function(data){
-                $('#closeJob').hide();
+                //$('#closeJob').hide();
+                location.href = "<?php echo base_url();?>index.php/Job_list/jobFeedback/"+jobId;
                 //alert(data);
                 //document.getElementById('hire_btn').firstChild.data = 'Hired';
             }

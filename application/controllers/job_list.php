@@ -399,26 +399,61 @@ class Job_list extends MY_Controller {
         $user_type = $this->session->userdata('user_type');
         $userId = $this->session->userdata('userid');
 
-        //if($user_type=='Frelancer'){
             $this->load->model('admin_panel_model');
             $data['onGoing_job_ids'] = $this->admin_panel_model->onGoingJobs($userId);
-        /*}else{
-            $this->load->model('admin_panel_model');
 
-            $data['onGoing_job_ids'] = $this->admin_panel_model->get_job_message_employeer($userId);
-        }*/
-        //print_r($data);
-        //die();
-
-        $this->load->view('onGoingJobEmployer',$data);
-        //$this->load->view('message',$data);
-        /*print_r($data['messages']);
-        die();*/
+        $this->load->view('job_list/onGoingJobEmployer',$data);
     }
     public function closeJob(){
         $data['status'] = 0;
         $this->load->model('admin_panel_model');
         $this->admin_panel_model->closeJobProcess($this->input->post('id'),$data);
+    }
+    public function jobFeedback($jobId = NULL){
+        $user_type = $this->session->userdata('user_type');
+
+        $this->load->model('admin_panel_model');
+        $data['feedback_job_ids'] = $this->admin_panel_model->jobFeedback($jobId);
+        if($user_type == 'Frelancer'){
+            $this->load->view('job_list/feedbackSendFree',$data);
+        }else{
+            $this->load->view('job_list/onGoingJobEmployerFeedback',$data);
+        }
+    }
+    public function feedbackSendEmp(){
+        $user_type = $this->session->userdata('user_type');
+        if($user_type != 'Frelancer'){
+            $data['emp_free']=$this->input->post('ratedValue');
+            $jobId=$this->input->post('jobId');
+            $data['emp_free_msg']=$this->input->post('rateComment');
+        }else{
+            $data['free_emp']=$this->input->post('ratedValue');
+            $jobId=$this->input->post('jobId');
+            $data['free_emp_msg']=$this->input->post('rateComment');
+        }
+        $this->load->model('admin_panel_model');
+        $this->admin_panel_model->feedbackSendProcess($data,$jobId);
+        if($user_type != 'Frelancer'){ redirect("index.php/job_list/onGoingJob");}
+        else{ redirect("index.php/job_list/notification");}
+    }
+    public function notification(){
+        /*echo $user_type = $this->session->userdata('user_type');
+        echo $userId = $this->session->userdata('userid');*/
+        $this->load->model('admin_panel_model');
+        $data['feedback_job_ids'] = $this->admin_panel_model->jobFeedback();
+        $this->load->view('job_list/notification',$data);
+    }
+    public function feedbackSendFree(){
+        $this->load->model('admin_panel_model');
+        $data['feedback_job_ids'] = $this->admin_panel_model->jobFeedback();
+        $this->load->view('job_list/feedbackSendFree',$data);
+    }
+    public function filteredJob(){
+        //print_r($_POST);
+
+        $this->load->model('admin_panel_model');
+        $data['feedback_job_ids'] = $this->admin_panel_model->filteredJob($_POST);
+//        $this->load->view('job_list/feedbackSendFree',$data);
     }
 }
 

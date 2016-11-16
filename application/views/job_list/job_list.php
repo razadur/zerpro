@@ -21,7 +21,7 @@ padding:15px 0px;
 			<div class="row">
 				<?php  include('job_list_left.php');?>
 				<main class="col-md-10 col-sm-9">
-				
+				<div id="jobList">
 				<?php foreach($get_job_lists as $get_job_list){ ?>
 					<div class="media job-item">
 						<div class="media-left">
@@ -71,7 +71,7 @@ padding:15px 0px;
 					</div><!-- /.media -->
 
 				<?php } ?>
-
+                </div>
 				</main>
 			</div>
 		</div>
