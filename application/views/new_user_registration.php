@@ -199,12 +199,7 @@ $(document).ready(function() {
                           </div>
 						   <div class="clearfix"></div>
 						   <br/>
-							  
 							  </form>
-						
-						 
-						 	
-							  
 						 </div>
 	<div id="ripon1" style="display:none;">
 		 <form action="<?php echo base_url();?>index.php/welcome/new_user_registration_save" method="POST"  enctype="multipart/form-data">

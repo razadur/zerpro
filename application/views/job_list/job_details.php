@@ -43,6 +43,9 @@
 							<div class="job-des">
 								<h3>Job overview</h3>
 								<p><?php echo $get_job_details->job_description; ?></p>
+
+                                <h3>Addition information</h3>
+								<p><?php echo $get_job_details->attached_file; ?></p>
 							</div>
 						</div>
 						<div class="col-md-3">
@@ -61,18 +64,21 @@
 								<?php if ($this->session->flashdata('flasherror')) { ?>
         <div class="alert alert-success"> <?= $this->session->flashdata('flasherror') ?> </div>
     <?php } ?>
+
+                                <?php if($get_job_applicants[0]->freelancer_id != $get_job_applicants[0]->user_id ){?>
 								<form role="form" action="<?php echo base_url();?>index.php/job_list/job_apply" method="POST"  enctype="multipart/form-data">
 									<input type="hidden" name="freelancer_id" value="<?php echo $this->session->userdata('userid') ?>" />
 									<input type="hidden" name="job_id" value="<?php echo $get_job_details->id; ?>" />
 									<input class="btn btn-primary btn-block" type="submit" value="Apply" name="submit" />
 								</form>
+                                <?php }?>
 								<!--<button class="btn btn-primary btn-block">Apply</button>-->
 								<div class="social-icon">
 									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="http://www.facebook.com/sharer.php?u=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://twitter.com/share?url=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="https://plus.google.com/share?url=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>" target="_blank" ><i class="fa fa-google-plus"></i></a></li>
+										<li><a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -82,29 +88,38 @@
 					<h3>applicants</h3>
 						<ul class="applicants-list">
 							<?php foreach($get_job_applicants as $get_job_applicant){ ?>
-							
-							<li>
-								<div class="candidate-pic">
-								<img src="<?php echo base_url(); ?>images/users/<?php echo $get_job_applicant->user_pic_one; ?>" width="60" height="60" /></div>
-								<div class="candidate-dis">
-									<a class="candidate-name" href="#"><?php echo $get_job_applicant->name; ?></a>
-									<div class="star">
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-										<a href="#"><i class="fa fa-star"></i></a>
-									</div>
-								</div>
-								<div class="candidate-budget">
-									<h5>$<?php echo $get_job_applicant->expeted_salary; ?></h5>
-								</div>
-							</li>
-							
-							
+                                <div class="col-md-12">
+								    <div class="col-md-1"> <img src="<?php echo base_url(); ?>images/users/<?php echo $get_job_applicant->user_pic_one; ?>" width="60" height="60" /></div>
+                                    <div class="col-md-2">
+                                        <a class="candidate-name" href="#"><?php echo $get_job_applicant->name; ?></a>
+                                        <div class="star">
+                                            <a href="#"><i class="fa fa-star"></i></a>
+                                            <a href="#"><i class="fa fa-star"></i></a>
+                                            <a href="#"><i class="fa fa-star"></i></a>
+                                            <a href="#"><i class="fa fa-star"></i></a>
+                                            <a href="#"><i class="fa fa-star"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div id="beforeReamFull"><?php $msg = $get_job_applicant->applying_massage;
+                                            if(strlen($msg)>50 ){ echo substr($msg, 0, 50).'<a >'; } else  echo $msg;  ?><a onclick="$('#beforeReamFull').hide(); $('#afterReadFullBtn').show();" style="cursor: pointer">Read More</a>
+                                        </div>
+                                        <div style="display: none" id="afterReadFullBtn"><?php echo $get_job_applicant->applying_massage;?></div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>Budget : <?php echo $get_job_applicant->budget; ?></h5>
+                                        <h5>Work_days : <?php echo $get_job_applicant->work_days; ?></h5>
+                                        <h5>Attachment : <?php echo !empty($get_job_applicant->attachment) ? 'Yes' : 'No'; ?></h5>
+                                    </div>
+                                </div>
 							<?php } ?>
 						</ul>
 					</div><!-- /.applicants -->
+
+
+
+
+
 				</main>
 			</div>
 		</div>

@@ -69,7 +69,6 @@ padding:15px 0px;
 							</div>
 						</div>
 					</div><!-- /.media -->
-
 				<?php } ?>
                 </div>
 				</main>

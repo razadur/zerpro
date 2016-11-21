@@ -57,12 +57,7 @@ class Job_list extends MY_Controller {
 	public function job_details()
 	{
 		$job_id = $this->uri->segment(3);
-		
-		
-		
-		
-		
-		
+
 		/*$data['institue_name']=;
 			
 			
@@ -114,9 +109,9 @@ class Job_list extends MY_Controller {
 		  
 		  $user_email = $data['get_job_details']->user_email;
 		 $data['employeer_info'] = $this->admin_panel_model->employeer_info($user_email);
-		 /*echo '<pre>';
+		 echo '<pre>';
 		 print_r($data);
-		 die();*/
+		 die();
 		
 		if($this->session->userdata('user_type') == 'Frelancer')
 		{
@@ -312,7 +307,15 @@ class Job_list extends MY_Controller {
 	
 	public function job_apply()
 	{
-		$data['freelancer_id']=$this->input->post('freelancer_id');
+        $this->load->model('admin_panel_model');
+        $data = $_POST;
+        $data['get_job_details'] = $this->admin_panel_model->get_job_details($_POST['job_id']);
+//        echo '<pre>';
+//        print_r($data);die;
+        $this->load->view('job_list/job_apply_form',$data);
+
+
+		/*$data['freelancer_id']=$this->input->post('freelancer_id');
 		$data['job_id']=$this->input->post('job_id');
 		$job_id=$this->input->post('job_id');
 		$freelancer_id = $this->session->userdata('userid');
@@ -337,17 +340,28 @@ class Job_list extends MY_Controller {
 		   $this->session->set_flashdata('flasherror', 'Successfully Applied!');
 		
 		redirect("index.php/job_list/job_details/".$job_id);
-		}
+		}*/
 		
-		print_r($application_status);
-		die();
-		
-		
-		
-		  
-	
+		/*print_r($application_status);
+		die();*/
+
 	}
-	
+
+	public function job_application()
+	{   $job_id = $data['job_id']=$this->input->post('job_id');
+        $data['budget']=$this->input->post('budget');
+        $data['work_days']=$this->input->post('work_days');
+        $data['applying_massage']=$this->input->post('applying_massage');
+        $data['freelancer_id']=$this->input->post('freelancer_id');
+
+        $this->load->model('admin_panel_model');
+        $this->admin_panel_model->save_job_apply($data);
+
+        $this->session->set_flashdata('flasherror', 'Successfully Applied!');
+        redirect("index.php/job_list/job_details/".$job_id);
+    }
+
+
 	public function shortlist()
 	{
 	
@@ -449,11 +463,12 @@ class Job_list extends MY_Controller {
         $this->load->view('job_list/feedbackSendFree',$data);
     }
     public function filteredJob(){
-        //print_r($_POST);
+        print_r($_SESSION);die;
 
         $this->load->model('admin_panel_model');
-        $data['feedback_job_ids'] = $this->admin_panel_model->filteredJob($_POST);
-//        $this->load->view('job_list/feedbackSendFree',$data);
+        $data['get_job_lists'] = $this->admin_panel_model->filteredJob($_POST);
+        //print_r($data);
+        $this->load->view('job_list/ajax_joblist',$data);
     }
 }
 

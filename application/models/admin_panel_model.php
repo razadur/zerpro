@@ -27,7 +27,11 @@ class Admin_panel_Model extends CI_Model {
             $dataUp['user_type'] = $data['user_type'];
             $dataUp['name'] = $data['first_name'].' '.$data['last_name'];
             $dataUp['user_email'] = $data['user_email'];
-            $this->db->insert('`user_profile_info`',$dataUp);
+            $dataUp['phone_no'] = $data['user_tel'];
+            $dataUp['phone_no'] = $data['user_tel'];
+            $dataUp['complete_address'] = $data['user_address'];
+            $dataUp['city'] = $data['user_city'];
+            $this->db->insert('user_profile_info',$dataUp);
         }else{
             return 0;
         }
@@ -287,13 +291,9 @@ class Admin_panel_Model extends CI_Model {
         $query_result=$this->db->get();
         $result=$query_result->result();
         return $result; 
-		
-		
+
     }*/
-	
-	
-	
-	
+
 	public function get_job_applicants($job_id)
     {
        $this->db->select('*');   
@@ -1690,7 +1690,7 @@ class Admin_panel_Model extends CI_Model {
     }
     public function onGoingJobs($id){
         $FreEmp = ($this->session->userdata('user_type')) == 'Frelancer' ? 'freelancer_id' : 'manage_job.user_id';
-        $this->db->select('manage_job.id,manage_job.user_id,job_title,job_description,manage_job.category,budget,`experience`,qualification,vacancy_type,user_profile_info.user_id fl_id,name');
+        $this->db->select('manage_job.id,manage_job.user_id,job_title,job_description,manage_job.category,job_applications.budget,`experience`,qualification,vacancy_type,user_profile_info.user_id fl_id,name,manage_job.status');
         $this->db->from('manage_job');
         $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
         $this->db->join('user_profile_info', 'user_profile_info.user_id = job_applications.freelancer_id');

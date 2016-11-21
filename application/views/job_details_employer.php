@@ -150,7 +150,7 @@
 									<h5>$200</h5>
 								</div>
 								<div class="action-button">
-									<button class="btn btn-block btn-primary">Shortlisted</button>
+									<button class="btn btn-block btn-primary">Shortlist</button>
 									<button class="btn btn-block btn-primary">Contact</button>
 								</div>
 							</li>

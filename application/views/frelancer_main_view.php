@@ -29,15 +29,19 @@
                  	<div class="candidate_panel">
 					<br/>
 						<div class="col-md-3">
-							<img src="http://placehold.it/180x180" alt="Profile Picture">
+                            <?php if(!empty($user_details_info->user_pic_one)) { $user_details_info->user_pic_one; ?>
+                                <img src="<?php echo base_url(); ?>images/users/<?php echo $user_details_info->user_pic_one; ?>" alt="Profile Picture" width="180" height="180">
+                            <?php }else{?>
+                                <img src="http://placehold.it/180x180" alt="Profile Picture">
+                            <?php }?>
 						</div>
 						<div class="col-md-3">
 							<span style="font-weight:bold; font-size:20px;"><?php echo $user_details->first_name; ?> <?php echo $user_details->last_name; ?></span>
 							<br/><br/>
 							<div style="padding-bottom:5px;"><b>User Type: <?php echo $this->session->userdata('user_type'); ?> </b></div>
-							<div style="padding-bottom:5px;"><b>Location: </b></div>
-							<div style="padding-bottom:5px;"><b>Phone: </b></div>
-							<div style="padding-bottom:5px;"><b>Email:<?php echo $user_details->user_email; ?> </b> </div>
+							<div style="padding-bottom:5px;"><b>Location: </b><?php echo $user_details_info->city; ?></div>
+							<div style="padding-bottom:5px;"><b>Phone: </b><?php echo $user_details_info->phone_no; ?></div>
+							<div style="padding-bottom:5px;"><b>Email: </b> <?php echo $user_details->user_email; ?></div>
 						</div>
 						
 						<div class="col-md-3" style="text-align:center;">
@@ -104,27 +108,13 @@
 						<div class="col-md-12">
 							<span style="font-weight:bold; font-size:20px;">Experience</span>
 							<br/>
-							<span style="font-weight:bold; font-size:16px;">Job Position</span>
+							<span style="font-weight:bold; font-size:16px;">Job Position: </span> <?php echo $user_details_info->job_position; ?>
 							<br/>
-							<div style="padding-bottom:5px;"><b>Company Name: </b> </div>
-							<div style="padding-bottom:5px;"><b>Comapy Type: </b></div>
+							<div style="padding-bottom:5px;"><b>Company Name: </b> <?php echo $user_details_info->company_name; ?></div>
+							<div style="padding-bottom:5px;"><b>Comapy Type: </b> <?php echo $user_details_info->company_type; ?></div>
 							<p>
-								
+                                <?php echo $user_details_info->job_details; ?>
 							</p>
-							
-							
-					
-							<br/>
-							<span style="font-weight:bold; font-size:16px;">Job Position</span>
-							<br/>
-							<div style="padding-bottom:5px;"><b>Company Name: </b> </div>
-							<div style="padding-bottom:5px;"><b>Comapy Type: </b></div>
-							<p>
-								
-								
-							</p>
-							
-							
 						</div>
 						<div class="clearfix"></div>
 						
@@ -133,9 +123,9 @@
 						<div class="col-md-12">
 							<span style="font-weight:bold; font-size:20px;">Education</span>
 							<br/><br/>
-							<span style="font-weight:bold; font-size:14px;"></span>
+							<span style="font-weight:bold; font-size:14px;">Degree: </span><?php echo $user_details_info->degree_name; ?>
 							<br/>
-							<span style="font-weight:bold; font-size:12px;"></span>
+							<span style="font-weight:bold; font-size:12px;">Year: </span><?php echo $user_details_info->year; ?>
 						
 						<br/><br/>
 							

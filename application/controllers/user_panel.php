@@ -26,6 +26,8 @@ class User_panel extends MY_Controller{
 		$user_email = $data['user_details']->user_email;
 		$data['user_details_info'] = $this->admin_panel_model->user_details_info($user_email);
 		$data['uploadedImage'] = $this->admin_panel_model->uploadedImage($user_id);
+//        echo '<pre>';
+//        print_r($data);die;
 		/*if($data['user_details_info'])
 		
 		{*/
@@ -87,8 +89,6 @@ class User_panel extends MY_Controller{
 		$data['get_all_categories'] = $this->admin_panel_model->get_all_categories();
 	    $user_type = $data['user_details']->user_type;
 		
-		/*print_r($user_type);
-		die();*/
 		if($user_type == 'Frelancer')
 		{
 			$user_email = $data['user_details']->user_email;
@@ -111,7 +111,7 @@ class User_panel extends MY_Controller{
 		
 			if($data['user_details_info'])
 		
-			{
+			{ //echo '<pre>';print_r($data);die;
 				$this->load->view('employee_edit',$data);
 			}
 			else
@@ -126,31 +126,19 @@ class User_panel extends MY_Controller{
 	{
 		if($this->input->post('update'))
 		{
-		//die();
-			$config['upload_path'] = './images/users/';
-       $config['allowed_types'] = 'mp4|gif|jpg|png';
-	   $config['post_max_size'] = '200M';
-	    $config['upload_max_filesize'] = '100M';
-      //$config['max_size']	= '49717208';  
+            if(!empty($_FILES['user_pic_one']['name'])){
+                $config['upload_path'] = './images/users/';
+                $config['allowed_types'] = 'mp4|gif|jpg|png';
+                $config['post_max_size'] = '200M';
+                $config['upload_max_filesize'] = '100M';
 
+               $this->upload->initialize($config);
 
-       $this->upload->initialize($config);
-       
-    //   echo '<pre>';
-//       print_r($_FILES);
-//       exit();
-       
-       $this->upload->do_upload('user_pic_one');
-       $image_des=$this->upload->data();
-       $file_name = $image_des['file_name'];
-	   $data['user_pic_one']=$file_name;
-	   
-	   
-	   
-	   
-	  // die();
-		
-		
+               $this->upload->do_upload('user_pic_one');
+               $image_des=$this->upload->data();
+               $file_name = $image_des['file_name'];
+               $data['user_pic_one']=$file_name;
+            }
 		
 			$data['user_id']=$this->input->post('user_id');
 			$data['user_type']=$this->input->post('user_type');

@@ -46,7 +46,7 @@
                                   </dl>
                               </div>
                               <div class="col-md-3">
-                                  <?php if($this->session->userdata('user_type') != 'Frelancer'){?>
+                                  <?php if($this->session->userdata('user_type') != 'Frelancer'  && ($onGoing_job_id->status == 0)){?>
                                   <button id="closeJob" class="btn btn-block btn-primary" onclick="closeJob(<?php echo $onGoing_job_id->id ?>)">Close Job</button>
                                   <?php }?>
                                   <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#myModal_<?php echo $onGoing_job_id->fl_id; ?>" style="text-align: center">Contact</button>

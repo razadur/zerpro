@@ -56,13 +56,16 @@
 
 <script>
     function formSubmit(){
+        var jobList = $('#jobList').html('');
         var sendData = $('#jobFilterList').serialize();
         $.ajax({
-            url: '<?php echo base_url();?>index.php/job_list/filteredJob',
+<!--            url: '--><?php //echo base_url();?><!--index.php/job_list/filteredJob',-->
+            url: '<?php echo base_url();?>index.php/withoutLogin_jobList',
             data: sendData,
             type:'POST',
             success:function(data){
-                alert(data);
+                //alert(data);
+                var jobList = $('#jobList').html(data);
             }
         });
 
