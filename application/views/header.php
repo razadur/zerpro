@@ -37,7 +37,7 @@
 				<div class="col-md-5 col-sm-5">
 					<ul class="find-button">
 						<li><a href="<?php echo base_url(); ?>index.php/welcome/joblist" class="btn btn-borderd">Find a job</a></li>
-						<li><a href="#" class="btn btn-borderd">Find an Expert</a></li>
+						<li><a href="<?php echo base_url(); ?>index.php/withoutLogin_jobList/frelancer_list" class="btn btn-borderd">Find an Expert</a></li>
 					</ul>
 				</div>
 			</div>

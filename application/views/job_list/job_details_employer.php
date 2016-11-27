@@ -70,11 +70,12 @@
 
 
             <div class="social-icon">
+                <h3>Share:</h3>
                 <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="http://www.facebook.com/sharer.php?u=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/share?url=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://plus.google.com/share?url=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>" target="_blank" ><i class="fa fa-google-plus"></i></a></li>
+                    <li><a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost/azad/technovicinity/zerpro/index.php/job_list/job_details/<?php echo $get_job_details->id; ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
             </div>
         </div>

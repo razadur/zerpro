@@ -108,13 +108,100 @@
 						<div class="col-md-12">
 							<span style="font-weight:bold; font-size:20px;">Experience</span>
 							<br/>
-							<span style="font-weight:bold; font-size:16px;">Job Position: </span> <?php echo $user_details_info->job_position; ?>
+							<!--<span style="font-weight:bold; font-size:16px;">Job Position: </span> <?php /*echo $user_details_info->job_position; */?>
 							<br/>
-							<div style="padding-bottom:5px;"><b>Company Name: </b> <?php echo $user_details_info->company_name; ?></div>
-							<div style="padding-bottom:5px;"><b>Comapy Type: </b> <?php echo $user_details_info->company_type; ?></div>
+							<div style="padding-bottom:5px;"><b>Company Name: </b> <?php /*echo $user_details_info->company_name; */?></div>
+							<div style="padding-bottom:5px;"><b>Comapy Type: </b> <?php /*echo $user_details_info->company_type; */?></div>
 							<p>
-                                <?php echo $user_details_info->job_details; ?>
-							</p>
+                                <?php /*echo $user_details_info->job_details; */?>
+							</p>-->
+                            <?php $i=0;
+                            $user_id = $user_details_info->user_id;
+                            $this->db->select('*');
+                            $this->db->from('user_job_info');
+                            $this->db->where('user_id',$user_id);
+                            $query_result= $this->db->get();
+                            $result=$query_result->result();
+                            $num_rows=$query_result->num_rows();
+                            if($num_rows != 0){
+                                foreach($result as $row){
+                                    if($i==0){?>
+                                        <div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>Job Position</label>
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>Company Category</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>Company name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label>Job details</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="job_added<?php echo $i;?>">
+                                            <div class="col-md-12">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->job_position?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->company_type?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->company_name?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->job_details?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php }else{?>
+                                        <div id="edu_added<?php echo $i;?>">
+                                            <div class="col-md-12">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->degree_name?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->year?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <?php echo $row->institue_name?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->job_details?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } $i++;}
+                            }?>
 						</div>
 						<div class="clearfix"></div>
 						
@@ -123,18 +210,90 @@
 						<div class="col-md-12">
 							<span style="font-weight:bold; font-size:20px;">Education</span>
 							<br/><br/>
-							<span style="font-weight:bold; font-size:14px;">Degree: </span><?php echo $user_details_info->degree_name; ?>
+							<!--<span style="font-weight:bold; font-size:14px;">Degree: </span><?php /*echo $user_details_info->degree_name; */?>
 							<br/>
-							<span style="font-weight:bold; font-size:12px;">Year: </span><?php echo $user_details_info->year; ?>
-						
+							<span style="font-weight:bold; font-size:12px;">Year: </span>--><?php /*echo $user_details_info->year; */?>
+
+                            <?php $i=0;
+                            $user_id = $user_details_info->user_id;
+                            $this->db->select('*');
+                            $this->db->from('user_edu_info');
+                            $this->db->where('user_id',$user_id);
+                            $query_result= $this->db->get();
+                            $result=$query_result->result();
+                            $num_rows=$query_result->num_rows();
+                            if($num_rows != 0){
+                                foreach($result as $row){
+                                    if($i==0){?>
+                                        <div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Degree</label>
+                                                        <label></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Year</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Institute Name</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="edu_added<?php echo $i;?>">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->degree_name?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->year?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->institue_name?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php }else{?>
+                                        <div id="edu_added<?php echo $i;?>">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->degree_name?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->year?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <?php echo $row->institue_name?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } $i++;}
+                            }?>
 						<br/><br/>
-							
 						</div>
-						
 						<div class="clearfix"></div>
-						
-						
-						<br/><br/>
+                        <div class="col-md-12">
+                            <label><a href="<?php echo base_url();?>index.php/user_panel/delete_profile">Delete Profile</a></label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br/><br/>
                     </div>
 					<br/>
                 </main>

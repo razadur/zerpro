@@ -60,7 +60,7 @@
                           
                           <div class="col-md-12">
                           	<div class="form-group">
-                            <label for="exampleInputEmail1">About</label>
+                            <label for="exampleInputEmail1">About (Optional)</label>
                             <textarea value="<?php echo $user_details_info->description; ?>" name="description" class="form-control" rows="3"><?php echo $user_details_info->description; ?></textarea>
                           </div>
                           </div>
@@ -68,7 +68,7 @@
                           <div class="clearfix"></div>
                           
                            <div class="col-md-6">
-                          	 <label for="exampleInputEmail1">Social Network</label>
+                          	 <label for="exampleInputEmail1">Social Network (Optional)</label>
                           	<div class="form-group">
                            		<input value="<?php echo $user_details_info->facebook_link; ?>" type="Text" class="form-control" id="name" placeholder="Enter Facebook"  name="facebook_link">
                          	</div>
@@ -91,11 +91,11 @@
                           <div class="col-md-6">
                           	 <label for="exampleInputEmail1">Contact Information</label>
                           	<div class="form-group">
-                            	<label for="exampleInputEmail1">Phone Number</label>
+                            	<label for="exampleInputEmail1">Phone Number (Optional)</label>
                            		<input type="Text" class="form-control" id="name" placeholder="" name="phone_no" value="<?php echo $user_details_info->phone_no; ?>">
                          	</div>
                             <div class="form-group">
-                            	<label for="exampleInputEmail1">Website</label>
+                            	<label for="exampleInputEmail1">Website (Optional)</label>
                            		<input type="Text" class="form-control" id="name" placeholder="" name="website" value="<?php echo $user_details_info->website; ?>">
                          	</div>
                             <div class="form-group">
@@ -191,10 +191,10 @@
                          	</div>
                             <div class="form-group">
                             	<label for="exampleInputEmail1">Country</label>
-                           		<input type="Text" class="form-control" id="name" placeholder="" name="country" value="<?php if(!empty($user_details_info->country) )echo $user_details_info->country; else echo 'Puerto Rico' ?>"/>
+                           		<input type="hidden" class="form-control" id="name" placeholder="" name="country" value="<?php if(!empty($user_details_info->country) )echo $user_details_info->country; else echo 'Puerto Rico' ?>"/>
                          	</div>
                             <div class="form-group">
-                            	 <label for="exampleInputEmail1">Complete Address</label>
+                            	 <label for="exampleInputEmail1">Complete Address (Optional)</label>
                            		<textarea value="<?php echo $user_details_info->complete_address; ?>" name="complete_address" class="form-control" rows="3"><?php echo $user_details_info->complete_address; ?></textarea>
                          	</div>
                           </div>

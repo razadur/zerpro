@@ -40,54 +40,28 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
+                <?php
+                $i=0;
+                foreach($get_all_categories as $get_all_categorie){ $i++;
+                    $category = $get_all_categorie->category_name;
+                    ?>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <a href="<?php echo base_url()."index.php/withoutLogin_jobList/jobList/$category";?>">
+                                <?php
+                                $sql = "SELECT * FROM (category) JOIN manage_job ON category_name = category WHERE category = '$category'";
+                                $query = $this->db->query($sql);
+                                $result = $query->num_rows();
+                                ?>
+                                <h5><?php echo $result?></h5>
+                                <h3><?php echo $category;?></h3>
+                            </a>
+                        </div><!-- /.box -->
+                    </div>
+                    <?php
+                    if($i==6){break;}
+                }
+                ?>
 			</div><!-- /.row -->
 		</div>
 	</section><!-- /.expertise -->
@@ -101,54 +75,28 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-					<a href="#">
-						<h5>1000</h5>
-						<h3>Electritians</h3>
-					</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
-				<div class="col-md-4">
-					<div class="box">
-						<a href="#">							
-							<h5>1000</h5>
-							<h3>Electritians</h3>
-						</a>
-					</div><!-- /.box -->
-				</div>
+                <?php
+                $i=0;
+                foreach($get_all_spcializations as $get_all_spcialization){ $i++;
+                $spcialization = $get_all_spcialization->spcialization;
+                ?>
+                <div class="col-md-4">
+                    <div class="box">
+                        <a href="<?php echo base_url()."index.php/withoutLogin_jobList/frelancer_list/$spcialization";?>">
+                            <?php
+                            $sql = "SELECT * FROM (user_profile_info) WHERE spcialization LIKE '%$spcialization%'";
+                            $query = $this->db->query($sql);
+                            $result = $query->num_rows();
+                            ?>
+                            <h5><?php echo $result?></h5>
+                            <h3><?php echo $spcialization;?></h3>
+                        </a>
+                    </div><!-- /.box -->
+                </div>
+                <?php
+                if($i==6){break;}
+                }
+                ?>
 			</div><!-- /.row -->
 		</div><!-- /.container -->
 	</section><!-- /.industry -->

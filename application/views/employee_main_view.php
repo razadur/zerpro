@@ -80,25 +80,19 @@
 							<span style="font-weight:bold; font-size:20px;">Rating & Review</span>
 							<br/>
 							<p>
-							
-								
 							</p>
 						</div>
-						
 						<div class="clearfix"></div>
-						
 						<hr/>
-						
 						<br/>
-						
-						
-						
-						
-						<br/><br/>
+                        <div class="col-md-12">
+                            <label><a href="<?php echo base_url();?>index.php/user_panel/delete_profile">Delete Profile</a></label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br/><br/>
                     </div>
 					<br/>
                 </main>
-				
 			</div>
 		</div>
 	</section><!-- /.main-containt -->

@@ -39,9 +39,10 @@
 					</form>
 					<div class="social-icon">
 						<ul>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="http://www.facebook.com/sharer.php?u=<?php echo base_url()?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/share?url=<?php echo base_url()?>&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/share?url=<?php echo base_url()?>" target="_blank" ><i class="fa fa-google-plus"></i></a></li>
+                            <li><a  href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo base_url()?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 						</ul>
 					</div>
 				</div><!-- /.col-md-6 -->
@@ -50,20 +51,15 @@
 					<div class="row">
 						<div class="col-md-6">
 							<ul class="footer-menu">
-								<li><a href="#">About</a></li>
-								<li><a href="#">FAQ</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Terms and Conditions</a></li>
+								<li><a href="<?php echo base_url()."index.php/withoutLogin_jobList/about";?>">About</a></li>
+								<li><a href="<?php echo base_url()."index.php/withoutLogin_jobList/faq";?>">FAQ</a></li>
+								<li><a href="<?php echo base_url()."index.php/withoutLogin_jobList/contactUs";?>">Contact Us</a></li>
+								<li><a href="<?php echo base_url()."index.php/withoutLogin_jobList/privacyPolicy";?>">Privacy Policy</a></li>
+								<li><a href="<?php echo base_url()."index.php/withoutLogin_jobList/termCondition";?>">Terms and Conditions</a></li>
 							</ul>
 						</div>
 						<div class="col-md-6">
 							<ul class="footer-menu">
-								<li><a href="#">About</a></li>
-								<li><a href="#">FAQ</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Terms and Conditions</a></li>
 							</ul>
 						</div>
 					</div>

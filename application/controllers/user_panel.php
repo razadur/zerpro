@@ -88,7 +88,7 @@ class User_panel extends MY_Controller{
 		$data['user_details'] = $this->admin_panel_model->user_details($user_id);
 		$data['get_all_categories'] = $this->admin_panel_model->get_all_categories();
 	    $user_type = $data['user_details']->user_type;
-		
+
 		if($user_type == 'Frelancer')
 		{
 			$user_email = $data['user_details']->user_email;
@@ -123,7 +123,7 @@ class User_panel extends MY_Controller{
 	}
 	
 	public function update_user_info()
-	{
+	{ //echo '<pre>'; die(print_r($_POST));
 		if($this->input->post('update'))
 		{
             if(!empty($_FILES['user_pic_one']['name'])){
@@ -177,101 +177,37 @@ class User_panel extends MY_Controller{
 			$data['degree_name']=$this->input->post('degree_name');
 			$data['year']=$this->input->post('year');
 			$data['institue_name']=$this->input->post('institue_name');
-			
-			//print_r($data);
-			//die();
 			$user_id = $this->input->post('user_id');
-			
+
 			$this->load->model('admin_panel_model');
 			
-		   $this->admin_panel_model->update_user_info_edit($user_id,$data);
-		   
-		   $this->session->set_flashdata('flasherror', 'Update Profile successfully!');
-		
-			redirect("index.php/user_panel");
+		   //$this->admin_panel_model->update_user_info_edit($user_id,$data);
+
+            $jobCounter = $this->input->post('jobCounter');
+            $eduCounter = $this->input->post('eduCounter');
+
+            for($i=0;$i<=$jobCounter;$i++){
+                $data_job['user_id'] = $user_id;
+                $data_job['job_position'] = $this->input->post('job_position'.$i);
+                $data_job['company_type'] = $this->input->post('company_type'.$i);
+                $data_job['company_name'] = $this->input->post('company_name'.$i);
+                $data_job['job_details'] = $this->input->post('job_details'.$i);
+                if(!empty($data_job['job_position']) && !empty($data_job['company_type']) && !empty($data_job['company_name'])){
+                    $this->admin_panel_model->jobAdd($data_job);
+                }
+            }
+            for($i=0;$i<=$eduCounter;$i++){
+                $data_edu['user_id'] = $user_id;
+                $data_edu['degree_name'] = $this->input->post('degree_name'.$i);
+                $data_edu['year'] = $this->input->post('year'.$i);
+                $data_edu['institue_name'] = $this->input->post('institue_name'.$i);
+                if(!empty($data_edu['degree_name']) && !empty($data_edu['year']) && !empty($data_edu['institue_name'])){
+                    $this->admin_panel_model->eduAdd($data_edu);
+                }
+            }
+		    $this->session->set_flashdata('flasherror', 'Update Profile successfully!');
 		}
-		else
-		{
-		
-		/*$spcialization = implode(",", $this->input->post('spcialization'));
-		
-		print_r($spcialization);
-		die();*/
-		
-		
-	   $config['upload_path'] = './images/users/';
-       $config['allowed_types'] = 'mp4|gif|jpg|png';
-	   $config['post_max_size'] = '200M';
-	    $config['upload_max_filesize'] = '100M';
-      //$config['max_size']	= '49717208';  
-
-
-       $this->upload->initialize($config);
-       
-    //   echo '<pre>';
-//       print_r($_FILES);
-//       exit();
-       
-       $this->upload->do_upload('user_pic_one');
-       $image_des=$this->upload->data();
-       $file_name = $image_des['file_name'];
-	   $data['user_pic_one']=$file_name;
-	   
-	   
-	   
-	   
-	  // die();
-		
-		
-		
-			$data['user_id']=$this->input->post('user_id');
-			$data['user_type']=$this->input->post('user_type');
-			$data['user_email']=$this->input->post('user_email');
-			$data['name']=$this->input->post('name');
-			$data['expeted_salary']=$this->input->post('expeted_salary');
-			$data['category']=$this->input->post('category');
-			
-			$user_type = $this->session->userdata('user_type');
-			if($user_type == 'frelancer')
-			{
-				$data['spcialization']=implode(",", $this->input->post('spcialization'));
-			}
-			else
-			{
-				//$data['spcialization']=$this->input->post('spcialization');
-			}
-			$data['spcialization']=implode(",", $this->input->post('spcialization'));
-			$data['description']=$this->input->post('description');
-			$data['facebook_link']=$this->input->post('facebook_link');
-			$data['twitter_link']=$this->input->post('twitter_link');
-			$data['youtube_link']=$this->input->post('youtube_link');
-			$data['google_plus_link']=$this->input->post('google_plus_link');
-			$data['phone_no']=$this->input->post('phone_no');
-			$data['website']=$this->input->post('website');
-			$data['city']=$this->input->post('city');
-			$data['alt_email_address']=$this->input->post('alt_email_address');
-			$data['country']=$this->input->post('country');
-			$data['complete_address']=$this->input->post('complete_address');
-			$data['company_name']=$this->input->post('company_name');
-			$data['job_position']=$this->input->post('job_position');
-			$data['company_type']=$this->input->post('company_type');
-			$data['job_details']=$this->input->post('job_details');
-			$data['degree_name']=$this->input->post('degree_name');
-			$data['year']=$this->input->post('year');
-			$data['institue_name']=$this->input->post('institue_name');
-			
-			//print_r($data);
-			//die();
-			
-			$this->load->model('admin_panel_model');
-		   $this->admin_panel_model->update_user_info($data);
-		   
-		   $this->session->set_flashdata('flasherror', 'Update Profile successfully!');
-		
-			redirect("index.php/user_panel");
-			
-		}//end of else	
-	
+        redirect("index.php/user_panel");
 	}
 	
 	public function get_spcialization()
@@ -408,7 +344,14 @@ class User_panel extends MY_Controller{
         $data =  $this->input->post('id');
         $this->load->model('admin_panel_model');
         $this->admin_panel_model->deleteImage($data);
-        echo 'azad';
+    }
+    public function delete_profile(){
+        $user_id = $this->session->userdata('userid');
+        $this->load->model('admin_panel_model');
+        $data['user_details'] = $this->admin_panel_model->user_delete($user_id);
+        $this->session->sess_destroy();
+        redirect( 'index.php/login' );
+
     }
 }
 

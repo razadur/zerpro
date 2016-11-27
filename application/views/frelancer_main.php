@@ -123,7 +123,7 @@
 							<span style="font-weight:bold; font-size:14px;">Institue name:</span><?php echo $user_details_info->institue_name; ?>
 							<br/>
 							<span style="font-weight:bold; font-size:14px;">Year:</span><?php echo $user_details_info->year; ?>
-						
+
 						<br/><br/>
 							
 						</div>

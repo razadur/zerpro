@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('admin_panel_model');
 		$data['get_all_categories'] = $this->admin_panel_model->get_all_categories();
+		$data['get_all_spcializations'] = $this->admin_panel_model->get_all_spcializations();
 		$this->load->view('home',$data);
 	}
 	public function get_spcialization2()

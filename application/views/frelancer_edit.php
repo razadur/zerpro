@@ -1,3 +1,7 @@
+<!--<pre>
+--><?php
+/*print_r($user_details_info);die;
+*/?>
 <?php include('header.php');?>
 	
 	<section class="page-title">
@@ -45,7 +49,7 @@
                                         <input type="hidden" name="imagePresent" value="1">
                                     <?php
                                     }else{?>
-                                        <img src="http://placehold.it/120x120" alt="Profile Picture">
+                                        <input type="file" id="exampleInputFile" name="user_pic_one" <?php if(empty($user_details_info->user_pic_one)) echo 'required';?>>
                                     <?php }?>
                                 </div>
                                 <p class="help-block">Example block-level help text here.</p>
@@ -110,7 +114,7 @@
                           <div class="clearfix"></div>
                           
                           <div class="col-md-6">
-                          	 <label for="exampleInputEmail1">Social Network</label>
+                          	 <label for="exampleInputEmail1">Social Network (Optional)</label>
                           	<div class="form-group">
                            		<input value="<?php echo $user_details_info->facebook_link; ?>" type="Text" class="form-control" id="name" placeholder="Enter Facebook"  name="facebook_link">
                          	</div>
@@ -131,13 +135,13 @@
                           <div class="clearfix"></div>
                           
                           <div class="col-md-6">
-                          	 <label for="exampleInputEmail1">Contact Information</label>
+                          	 <label for="exampleInputEmail1">Contact Information (Optional)</label>
                           	<div class="form-group">
                             	<label for="exampleInputEmail1">Phone Number</label>
                            		<input type="Text" class="form-control" id="name" placeholder="" name="phone_no" value="<?php echo $user_details_info->phone_no; ?>">
                          	</div>
                             <div class="form-group">
-                            	<label for="exampleInputEmail1">Website</label>
+                            	<label for="exampleInputEmail1">Website (Optional)</label>
                            		<input type="Text" class="form-control" id="name" placeholder="" name="website" value="<?php echo $user_details_info->website; ?>">
                          	</div>
                             <div class="form-group">
@@ -234,10 +238,9 @@
                             <div class="form-group">
                             	<label for="exampleInputEmail1">Country</label>
                                 <input type="Text" class="form-control" id="name" placeholder="" name="country" value="<?php if(!empty($user_details_info->country) )echo $user_details_info->country; else echo 'Puerto Rico' ?>"/>
-
                             </div>
                             <div class="form-group">
-                            	 <label for="exampleInputEmail1">Complete Address</label>
+                            	 <label for="exampleInputEmail1">Complete Address (Optional)</label>
                            		<textarea value="<?php echo $user_details_info->complete_address; ?>" name="complete_address" class="form-control" rows="3"><?php echo $user_details_info->complete_address; ?></textarea>
                          	</div>
                           </div>
@@ -245,72 +248,267 @@
                           <div class="clearfix"></div>
                           
                           
-                          <div class="col-md-6">
-                          	 <label for="exampleInputEmail1">Experience</label>
-                          	<div class="form-group">
-                            	<label for="exampleInputEmail1">Job Position</label>
-                           		<input type="Text" class="form-control" id="name" placeholder="" name="job_position" value="<?php echo $user_details_info->job_position; ?>">
-                         	</div>
-                            <div class="form-group">
-                            	<label for="exampleInputEmail1">Company type</label>
-                           		<select class="form-control" name="company_type">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
-                         	</div>
-                          </div>
-                          <div class="col-md-6">
-                          	<label for="exampleInputEmail1"></label>
-                          	<div class="form-group">
-                            	<label for="exampleInputEmail1">Company name</label>
-                           		<input type="Text" class="form-control" id="name" placeholder="" name="company_name" value="<?php echo $user_details_info->company_name; ?>">
-                         	</div>
-                          </div>
-                          
                           <div class="col-md-12">
-                          	<label for="exampleInputEmail1"></label>
-                          	<div class="form-group">
-                            	<label for="exampleInputEmail1">Job details</label>
-                           		<textarea value="<?php echo $user_details_info->job_details; ?>" name="job_details" class="form-control" rows="3"><?php echo $user_details_info->job_details; ?></textarea>
-                         	</div>
+                          	 <label >Experience (Optional)<a  style="padding-left: 20px" onclick="jobAddMore()">Add More</a></label>
+                              <input type="hidden" value="0" id="jobCounter" name="jobCounter">
                           </div>
-                          
+                          <div class="col-md-12">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Job Position</label>
+                                    <input type="Text" class="form-control" id="job_position0" placeholder="" name="job_position0">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label >Company Category</label>
+                                    <select class="form-control" name="company_type0" id="company_type0">
+                                      <option  value="1">1</option>
+                                      <option  value="2">2</option>
+                                      <option  value="3">3</option>
+                                      <option  value="4">4</option>
+                                      <option  value="5">5</option>
+                                    </select>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label></label>
+                                <div class="form-group">
+                                    <label >Company name</label>
+                                    <input type="Text" class="form-control" id="company_name0" placeholder="" name="company_name0" >
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="exampleInputEmail1"></label>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Job details</label>
+                                    <textarea name="job_details0" id="job_details0" class="form-control"></textarea>
+                                </div>
+                              </div>
+                          </div>
+                        <div id="job_add_more">
+                        </div>
+                        <?php $i=0;
+                        $user_id = $user_details_info->user_id;
+                        $this->db->select('*');
+                        $this->db->from('user_job_info');
+                        $this->db->where('user_id',$user_id);
+                        $query_result= $this->db->get();
+                        $result=$query_result->result();
+                        $num_rows=$query_result->num_rows();
+                        if($num_rows != 0){
+                            foreach($result as $row){
+                                if($i==0){?>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Job Position</label>
+                                                    <label></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Company Category</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Company name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Job details</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Option</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="job_added<?php echo $i;?>">
+                                        <div class="col-md-12">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <?php echo $row->job_position?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <?php echo $row->company_type?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <?php echo $row->company_name?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <?php echo $row->job_details?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label><a onclick="jobAddedCancle(<?php echo $i;?>)">Delete</a></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php }else{?>
+                                    <div id="edu_added<?php echo $i;?>">
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->degree_name?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->year?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->institue_name?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label><a onclick="jobAddedCancle(<?php echo $i;?>)">Delete</a></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } $i++;}
+                        }?>
+                        <div class="col-md-12">&nbsp;</div>
+                        <div class="col-md-12">&nbsp;</div>
+                        <div class="col-md-12">&nbsp;</div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <label>Education (Optional)<a onclick="eduAddMore()" style="padding-left: 20px"> Add More</a></label>
+                            <input type="hidden" value="0" id="eduCounter" name="eduCounter">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="degree_name0">Degree</label>
+                                    <select class="form-control" name="degree_name0" id="degree_name0">
+                                        <option value="">No Degree</option>
+                                        <option value="High School Diploma">High School Diploma</option>
+                                        <option value="Technical Certificate">Technical Certificate</option>
+                                        <option value="Associates Degree">Associates Degree</option>
+                                        <option value="Bachelor’s Degree">Bachelor’s Degree</option>
+                                        <option value="Master’s Degree">Master’s Degree</option>
+                                        <option value="Doctor’s Degree">Doctor’s Degree</option>
+                                    </select>
+                                </div>
+                            </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="year0">Year</label>
+                                      <input type="number" class="form-control" id="year0" placeholder="Year" name="year0">
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="institue_name0">Institute Name</label>
+                                    <input type="Text" class="form-control" id="institue_name0" placeholder="Institute Name" name="institue_name0">
+                                </div>
+                              </div>
+                        </div>
+                          <div id="edu_add_more">
+                          </div>
+
+
+                        <?php $i=0;
+                        $user_id = $user_details_info->user_id;
+                        $this->db->select('*');
+                        $this->db->from('user_edu_info');
+                        $this->db->where('user_id',$user_id);
+                        $query_result= $this->db->get();
+                        $result=$query_result->result();
+                        $num_rows=$query_result->num_rows();
+                        if($num_rows != 0){
+                            foreach($result as $row){
+                                if($i==0){?>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Degree</label>
+                                                    <label></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Year</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Institute Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Option</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="edu_added<?php echo $i;?>">
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->degree_name?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->year?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->institue_name?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label><a onclick="eduAddedCancle(<?php echo $i;?>)">Delete</a></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php }else{?>
+                                    <div id="edu_added<?php echo $i;?>">
+                                        <div class="col-md-12">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->degree_name?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->year?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <?php echo $row->institue_name?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label><a onclick="eduAddedCancle(<?php echo $i;?>)">Delete</a></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php } $i++;}
+                            }?>
+
+
                           <div class="clearfix"></div>
-                          
-                          <div class="col-md-6">
-                          	 <label for="exampleInputEmail1">Education</label>
-                          	<div class="form-group">
-                            	<label for="exampleInputEmail1">Degree</label>
-                           		<input value="<?php echo $user_details_info->degree_name; ?>" type="Text" class="form-control" id="name" placeholder="" name="degree_name">
-                         	</div>
-                            <div class="form-group">
-                            	<label for="exampleInputEmail1">Year</label>
-                           		<input value="<?php echo $user_details_info->year; ?>" type="Text" class="form-control" id="name" placeholder="" name="year">
-                         	</div>
-                          </div>
-                          <div class="col-md-6">
-                          	<label for="exampleInputEmail1"></label>
-                          	
-                          	<div class="form-group">
-                            	<label for="exampleInputEmail1">Institue Name</label>
-                           		<select class="form-control" name="institue_name">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                                </select>
-                         	</div>
-                          </div>
-                          
-                          
-                          
-                          <div class="clearfix"></div>
-                          
-                          
                           <div class="col-md-12">
 						  <input value="Update" type="submit" class="submit_btn btn btn-default" name="update"/>
                           <!--<button type="submit" class="submit_btn btn btn-default" name="update">Update</button>-->
@@ -350,5 +548,121 @@
   xmlhttp.send();
 }
 
+    function eduAddMore(){
+        var count = parseInt($('#eduCounter').val());
+        var degree_name = $('#degree_name0').val();
+        var year = $('#year0').val();
+        var institute_name = $('#institue_name0').val();
+        var count = count+1
+        if(degree_name == ''){
+            alert('Degree cannot be empty.');
+        }else if(year == ''){
+            alert('year cannot be empty.');
+        }else if(institute_name == ''){
+            alert('Institute Name cannot be empty.');
+        }else{
+            var html =  '<div id="addEdu'+count+'" class="col-md-6">' +
+                            '<div class="col-md-6">' +
+                                '<div class="form-group">' +
+                                    '<label for="degree_name'+count+'">Degree</label>' +
+                                    '<input type="Text" value="'+degree_name+'" class="form-control" name="degree_name'+count+'" id="degree_name'+count+'" readonly>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                '<div class="form-group">' +
+                                    '<label for="year'+count+'">Year</label>' +
+                                    '<input type="Text" value="'+year+'" class="form-control" id="year'+count+'" placeholder="Year" name="year'+count+'" readonly>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                    '<div class="form-group">' +
+                                        '<label for="institue_name'+count+'">Institute Name</label>' +
+                                        '<input type="Text" value="'+institute_name+'" class="form-control" id="institue_name'+count+'" placeholder="Institute Name" name="institue_name'+count+'" readonly>' +
+                                    '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                    '<div class="form-group">' +
+                                        '<br>' +
+                                        '<a onclick="eduCancle('+count+')" class = "btn btn-default">Cancle</a>'+
+                                    '</div>' +
+                            '</div>' +
+                        '</div>';
+            $('#edu_add_more').append(html);
+            $('#eduCounter').val(count);
+            $("#degree_name0").val("").change();
+            $('#year0').val("");
+            $('#institue_name0').val("");
+        }
+    }
+    function eduCancle(n) {
+        $('#addEdu'+n).remove();
+    }
+    function jobAddMore(){
+        var count = parseInt($('#jobCounter').val());
+        var job_position = $('#job_position0').val();
+        var company_type = $('#company_type0').val();
+        var company_name = $('#company_name0').val();
+        var job_details = $('#job_details0').val();
+        var count = count+1
+        if(job_position == ''){
+            alert('Job position cannot be empty.');
+        }else if(company_type == ''){
+            alert('Company type cannot be empty.');
+        }else if(company_name == ''){
+            alert('Company Name cannot be empty.');
+        }else if(job_details == ''){
+            alert('Job details cannot be empty.');
+        }else{
+            var html =  '<div class="col-md-6" id="addJob'+count+'">' +
+                            '<div class="col-md-6">' +
+                                '<div class="form-group">' +
+                                    '<label>Job Position</label>' +
+                                    '<input type="Text" value="'+job_position+'" class="form-control" id="job_position'+count+'" placeholder="" name="job_position'+count+'" readonly>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                '<div class="form-group">' +
+                                    '<label >Company Category</label>' +
+                                    '<input type="Text" value="'+company_type+'" class="form-control" id="company_type'+count+'" placeholder="" name="company_type'+count+'" readonly>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                '<label></label>' +
+                                '<div class="form-group">' +
+                                    '<label >Company name</label>' +
+                                    '<input type="Text" value="'+company_name+'" class="form-control" id="company_name'+count+'" placeholder="" name="company_name'+count+'" readonly>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                '<label></label>' +
+                                '<div class="form-group">' +
+                                    '<label>Job details</label>' +
+                                    '<textarea  class="form-control" name="job_details'+count+'" id="job_details'+count+'" readonly>'+job_details+'</textarea>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-md-6">' +
+                                '<div class="form-group">' +
+                                    '<br>' +
+                                    '<a onclick="jobCancle('+count+')" class = "btn btn-default">Cancle</a>'+
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+            $('#job_add_more').append(html);
+            $('#jobCounter').val(count);
+            $('#job_position0').val("");
+            $("#company_type0").val("").change();
+            $('#company_name0').val("");
+            $('#job_details0').val("");
+        }
+    }
+    function jobCancle(n){
+        $('#addJob'+n).remove();
+    }
+    function eduAddedCancle(n){
+        $('#edu_added'+n).remove();
+    }
+    function jobAddedCancle(n){
+        $('#job_added'+n).remove();
+    }
  </script>
 <?php include('footer.php');?>

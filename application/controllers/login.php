@@ -27,6 +27,7 @@ class Login extends CI_Controller {
 			$this->db->from('user_registration_info');
 			$this->db->where('user_email', $email); 
 			$this->db->where('user_password', $password); 
+			$this->db->where('status', '1');
 			$query = $this->db->get();
 			$result = $query->result(); 
 			if( $query->num_rows() > 0)

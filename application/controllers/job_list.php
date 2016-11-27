@@ -109,9 +109,9 @@ class Job_list extends MY_Controller {
 		  
 		  $user_email = $data['get_job_details']->user_email;
 		 $data['employeer_info'] = $this->admin_panel_model->employeer_info($user_email);
-		 echo '<pre>';
+		 /*echo '<pre>';
 		 print_r($data);
-		 die();
+		 die();*/
 		
 		if($this->session->userdata('user_type') == 'Frelancer')
 		{

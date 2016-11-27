@@ -113,9 +113,9 @@ class Admin_panel_Model extends CI_Model {
         $this->db->delete('user_profile_info');
 	}
 	public function user_delete($user_id)
-	{
+	{   $data['status']=0;
 		$this->db->where('id',$user_id);
-        $this->db->delete('user_registration_info');
+        $this->db->update('user_registration_info',$data);
 	}
 	
 	public function get_category($id)
@@ -454,6 +454,13 @@ class Admin_panel_Model extends CI_Model {
 		$this->db->where('user_id', $user_id);
 		$this->db->update('user_profile_info',$data);
 	}
+
+    public function eduAdd($data){
+        $this->db->insert('user_edu_info_',$data);
+    }
+    public function jobAdd($data){
+        $this->db->insert('user_job_info',$data);
+    }
 	public function category_update($id,$data)
 	{
 		$this->db->where('id', $id);
@@ -503,10 +510,9 @@ class Admin_panel_Model extends CI_Model {
         $result=$query_result->result();
         return $result; 
     }
-	
 	public function get_all_spcializations()
     {
-       $this->db->select('*');
+        $this->db->select('*');
         $this->db->from('spcialization');
         $query_result=$this->db->get();
         $result=$query_result->result();
@@ -1730,7 +1736,7 @@ class Admin_panel_Model extends CI_Model {
         $this->db->update('job_feedback',$data);
     }
     public function filteredJob($data){
-        //print_r($data);
+        //print_r($data);die;
         $this->db->select('manage_job.*,user_profile_info.user_pic_one');
         $this->db->from('manage_job');
         $this->db->join('user_profile_info', 'manage_job.user_email = user_profile_info.user_email');
@@ -1752,6 +1758,37 @@ class Admin_panel_Model extends CI_Model {
                 if(!empty($data[$var])){
                     $d = $data[$var];
                     $this->db->where("manage_job.spcialization LIKE CONCAT('%',(SELECT spcialization FROM spcialization WHERE id = $d), '%')");
+                }
+            }
+        }
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
+    public function freelancerList($data=''){
+        $this->db->select('*');
+        $this->db->from('user_profile_info');
+        $this->db->where("LOWER(spcialization) LIKE LOWER('%$data%')");
+        $this->db->where("user_id != ''");
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
+    public function frelancer_list_filter($data){
+        //die(print_r($data));
+        $this->db->select('*');
+        $this->db->from('user_profile_info');
+        if(!empty($data['search'])){
+            $search = $data['search']; $this->db->where("name LIKE '%$search%'");
+        }
+
+        if($data['SpecialtyCount']>1){
+            $count = $data['SpecialtyCount'];
+            for($i=1;$i<$count;$i++){
+                $var = 'Specialty'.$i;
+                if(!empty($data[$var])){
+                    $d = $data[$var];
+                    $this->db->where("spcialization LIKE CONCAT('%',(SELECT spcialization FROM spcialization WHERE id = $d), '%')");
                 }
             }
         }
