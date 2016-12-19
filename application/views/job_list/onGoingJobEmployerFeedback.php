@@ -27,7 +27,7 @@
 
                     <div class="applicants">
 <!--                        <pre>-->
-<!--                        --><?php //print_r($feedback_job_ids);?>
+<!--                        --><?php //print_r($feedback_job_ids);die;?>
                         <?php foreach($feedback_job_ids as $feedback_job_id){ ?>
                             <div class="media-body">
                                 <div class="col-md-9">

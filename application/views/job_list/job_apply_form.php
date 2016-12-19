@@ -31,7 +31,7 @@
                         <div class="job-des">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                                <form action="<?php echo base_url();?>index.php/job_list/job_application"" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo base_url();?>index.php/job_list/job_application" method="post" enctype="multipart/form-data">
                                 <div class="col-md-6">
                                     <label for="budget">Budget</label>
                                     <div class="form-group">
@@ -51,7 +51,7 @@
                                     </div>
                                     <label for="attachment">Attachment</label>
                                     <div class="form-group">
-                                        <input id="attachment"   name="attachment" type="file">
+                                        <input type="file" name="attached_file">
                                     </div>
                                     <input type="submit" value="Apply" class="btn btn-borderd pull-right">
                                     <input type="hidden" name="job_id" value="<?php echo $job_id;?>">

@@ -5,10 +5,10 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/withoutLogin_jobList.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/job_list/ajax_joblist.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/job_list/job_list_left.php" afterPath="$PROJECT_DIR$/application/views/job_list/job_list_left.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/job_list.php" afterPath="$PROJECT_DIR$/application/controllers/job_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/job_list/job_list.php" afterPath="$PROJECT_DIR$/application/views/job_list/job_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/job_list/job_list_left.php" afterPath="$PROJECT_DIR$/application/views/job_list/job_list_left.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/job_list/job_list.php" afterPath="$PROJECT_DIR$/application/views/job_list/job_list.php" />
     </list>
     <ignored path="zerpro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,87 +31,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="frelancer_edit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/frelancer_edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="290" column="24" selection-start="24521" selection-end="30590" vertical-scroll-proportion="58.576923" vertical-offset="6453" max-vertical-offset="10217">
-              <folding>
-                <element signature="e#22110#22136#0" expanded="true" />
-                <element signature="e#30953#30979#0" expanded="true" />
-                <element signature="e#33658#38214#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frelancer_main_view.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/frelancer_main_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="214" column="129" selection-start="11643" selection-end="11643" vertical-scroll-proportion="-0.088" vertical-offset="3682" max-vertical-offset="7038">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#3;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#5;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#6;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#6;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#span#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#output#0;n#div#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#4;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/page/about.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="14" selection-start="242" selection-end="242" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="697">
-              <folding>
-                <marker date="1479920974906" expanded="true" signature="31:241" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="63:226" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="93:211" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="133:192" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="278:3153" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="310:3138" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="340:3123" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="391:3104" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="613:1401" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="684:1374" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="747:1343" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="1623:3080" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="1682:3053" placeholder="..." />
-                <marker date="1479920974906" expanded="true" signature="1832:3022" placeholder="..." />
-                <marker date="1479920974906" expanded="false" signature="1849:1866" placeholder="..." />
-                <marker date="1479920974906" expanded="false" signature="2146:2163" placeholder="..." />
-                <marker date="1479920974906" expanded="false" signature="2233:2250" placeholder="..." />
-                <marker date="1479920974906" expanded="false" signature="2316:2333" placeholder="..." />
-                <marker date="1479920974906" expanded="false" signature="2535:2552" placeholder="..." />
-                <marker date="1479920974906" expanded="false" signature="2718:2735" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_panel.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="user_panel.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/user_panel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="218" column="57" selection-start="7530" selection-end="7530" vertical-scroll-proportion="-6.5384617" vertical-offset="3332" max-vertical-offset="6052">
-              <folding>
-                <element signature="e#3350#3899#0" expanded="false" />
-              </folding>
+            <state line="100" column="54" selection-start="3455" selection-end="3455" vertical-scroll-proportion="1.3503056" vertical-offset="1037" max-vertical-offset="7412">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="packageInfo.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/packageInfo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="40" selection-start="1408" selection-end="1408" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="1224">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,51 +62,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/onGoingJobEmployer.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/onGoingJobEmployerFeedback.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/feedbackSendFree.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/notification.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/ajax_joblist.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/job_list_left.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/job_apply_form.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/left_menu.php" />
-        <option value="$PROJECT_DIR$/application/views/left_menu.php" />
-        <option value="$PROJECT_DIR$/application/views/job_details_employer.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/short_list.php" />
-        <option value="$PROJECT_DIR$/application/views/new_user_registration.php" />
-        <option value="$PROJECT_DIR$/application/views/message.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/onGoingJobEmployer.php" />
-        <option value="$PROJECT_DIR$/application/controllers/job_list.php" />
-        <option value="$PROJECT_DIR$/application/controllers/welcome.php" />
-        <option value="$PROJECT_DIR$/application/views/home.php" />
-        <option value="$PROJECT_DIR$/application/views/freelancer_profile.php" />
-        <option value="$PROJECT_DIR$/application/views/header.php" />
-        <option value="$PROJECT_DIR$/application/views/home_header.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/header.php" />
-        <option value="$PROJECT_DIR$/application/views/freelancer_list_left.php" />
-        <option value="$PROJECT_DIR$/application/views/ajax_frelancer_list.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/job_list.php" />
-        <option value="$PROJECT_DIR$/application/views/page/about.php" />
-        <option value="$PROJECT_DIR$/application/views/page/contactUs.php" />
-        <option value="$PROJECT_DIR$/application/controllers/withoutLogin_jobList.php" />
-        <option value="$PROJECT_DIR$/application/views/job_list/footer.php" />
-        <option value="$PROJECT_DIR$/application/views/frelancer_list.php" />
-        <option value="$PROJECT_DIR$/application/views/page/faq.php" />
-        <option value="$PROJECT_DIR$/application/views/page/privacyPolicy.php" />
-        <option value="$PROJECT_DIR$/application/views/page/termCondition.php" />
-        <option value="E:/Zend/Apache2_/htdocs/edit_Live/att_reset_process.php" />
-        <option value="$PROJECT_DIR$/application/controllers/login.php" />
-        <option value="$PROJECT_DIR$/application/views/frelancer_publicView.php" />
-        <option value="$PROJECT_DIR$/application/views/employee_main_view.php" />
-        <option value="$PROJECT_DIR$/application/views/employee_edit.php" />
+        <option value="$PROJECT_DIR$/application/views/forgetPass/step1.php" />
+        <option value="$PROJECT_DIR$/application/views/forgetPass/step2.php" />
         <option value="$PROJECT_DIR$/application/views/footer.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/left_menu.php" />
+        <option value="$PROJECT_DIR$/application/controllers/awaitingAcceptance.php" />
+        <option value="$USER_HOME$/Desktop/testapi.html" />
+        <option value="$PROJECT_DIR$/../../test/testJs.php" />
+        <option value="$PROJECT_DIR$/application/views/frelancer_main.php" />
+        <option value="$PROJECT_DIR$/application/views/employee_main.php" />
+        <option value="$USER_HOME$/Desktop/twit_sign.html" />
+        <option value="$PROJECT_DIR$/../../test/twitLogin/twitter.html" />
+        <option value="$PROJECT_DIR$/../../test/fb.php" />
+        <option value="$PROJECT_DIR$/application/views/home.php" />
+        <option value="$PROJECT_DIR$/../../test/googleLogin/index.php" />
+        <option value="$USER_HOME$/Desktop/twitter.html" />
+        <option value="$PROJECT_DIR$/application/views/left_menu.php" />
+        <option value="$PROJECT_DIR$/application/views/create_job.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/short_list.php" />
+        <option value="$PROJECT_DIR$/application/views/message.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/notification.php" />
+        <option value="$PROJECT_DIR$/application/views/login.php" />
+        <option value="$PROJECT_DIR$/application/views/employee_main_view.php" />
+        <option value="$USER_HOME$/Desktop/kargoTrack.html" />
+        <option value="$PROJECT_DIR$/../../test/kargoTrack.php" />
+        <option value="E:/Zend/Apache2_/htdocs/edit_Live/att_reset_process.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/job_apply_form.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/onGoingJobEmployerFeedback.php" />
         <option value="$PROJECT_DIR$/application/views/job_list/job_details.php" />
         <option value="$PROJECT_DIR$/application/views/job_list/job_details_employer.php" />
+        <option value="$PROJECT_DIR$/application/views/employee_publicView.php" />
+        <option value="$PROJECT_DIR$/application/views/frelancer_publicView.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/awaitingAcceptance.php" />
+        <option value="$PROJECT_DIR$/application/views/frelancer_main_view.php" />
+        <option value="$PROJECT_DIR$/application/views/page/membership.php" />
+        <option value="$PROJECT_DIR$/application/views/membership.php" />
+        <option value="$PROJECT_DIR$/application/views/new_user_registration.php" />
+        <option value="$PROJECT_DIR$/application/controllers/welcome.php" />
+        <option value="$PROJECT_DIR$/application/views/employee_edit.php" />
+        <option value="$PROJECT_DIR$/application/views/frelancer_edit.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/onGoingJobEmployer.php" />
+        <option value="$PROJECT_DIR$/../../public_html/index.html" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-1/new_user_registration.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/ajax_spe.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/job_list_left.php" />
+        <option value="$PROJECT_DIR$/application/views/freelancer_list_left.php" />
+        <option value="$PROJECT_DIR$/application/controllers/job_list.php" />
+        <option value="$PROJECT_DIR$/application/views/job_list/job_list.php" />
+        <option value="$PROJECT_DIR$/application/views/packageInfo.php" />
+        <option value="$PROJECT_DIR$/style.min.css" />
         <option value="$PROJECT_DIR$/application/models/admin_panel_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/user_panel.php" />
-        <option value="$PROJECT_DIR$/application/views/frelancer_edit.php" />
-        <option value="$PROJECT_DIR$/application/views/frelancer_main.php" />
-        <option value="$PROJECT_DIR$/application/views/frelancer_main_view.php" />
       </list>
     </option>
   </component>
@@ -210,7 +149,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,46 +195,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zerpro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zerpro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zerpro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zerpro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -321,27 +219,31 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistory" value="`manage_job`.`id`" />
+    <property name="last_opened_file_path" value="E:/Zend/Apache2/htdocs/azad/hr_payroll_acc" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views\job_list" />
-      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views\page" />
       <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views" />
-      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\images" />
+      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views\job_list" />
+      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\assets\slide" />
+      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\assets\slide\js" />
+      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views\forgetPass" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views\job_list" />
       <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views" />
+      <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\application\views\job_list" />
       <recent name="E:\xampp\htdocs\azad\technovicinity\zerpro\assets" />
     </key>
   </component>
@@ -398,11 +300,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329806" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3602719" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25981873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18882175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920355" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -411,7 +313,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32920355" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -433,10 +335,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5385196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23791541" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -458,103 +360,181 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/config/constants.php">
+    <entry file="file://$PROJECT_DIR$/../../test/fbLogin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782" />
+        <state line="97" column="0" selection-start="3574" selection-end="3668" vertical-scroll-proportion="0.442" vertical-offset="1428" max-vertical-offset="4794" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+    <entry file="file://$PROJECT_DIR$/application/views/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4512196" vertical-offset="714" max-vertical-offset="1258" />
+        <state line="253" column="31" selection-start="12886" selection-end="12886" vertical-scroll-proportion="0.034" vertical-offset="4284" max-vertical-offset="4794" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/doctypes.php">
+    <entry file="file://$USER_HOME$/Desktop/twitter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="505" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/user_agents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.3231707" vertical-offset="2619" max-vertical-offset="3111" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/smileys.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.31300813" vertical-offset="154" max-vertical-offset="1207" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/profiler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="518" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/mimes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.42588726" vertical-offset="204" max-vertical-offset="1904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="69" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.6219512" vertical-offset="153" max-vertical-offset="6528" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/short_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="0" selection-end="1641" vertical-scroll-proportion="0.8947368" vertical-offset="0" max-vertical-offset="816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/job_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="53" selection-start="1343" selection-end="1343" vertical-scroll-proportion="-1.6237817" vertical-offset="1734" max-vertical-offset="8177" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_list_left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="74" selection-start="2664" selection-end="2664" vertical-scroll-proportion="0.54385966" vertical-offset="775" max-vertical-offset="1326">
-          <folding />
-        </state>
+        <state line="24" column="9" selection-start="627" selection-end="627" vertical-scroll-proportion="0.32210526" vertical-offset="255" max-vertical-offset="867" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/frelancer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="239" column="17" selection-start="12460" selection-end="12460" vertical-scroll-proportion="0.7136842" vertical-offset="3724" max-vertical-offset="4250" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.632" vertical-offset="816" max-vertical-offset="4250" />
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/ereg.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="365" selection-end="365" vertical-scroll-proportion="0.28265107" vertical-offset="93" max-vertical-offset="19567">
-          <folding />
-        </state>
+        <state line="161" column="9" selection-start="5841" selection-end="5841" vertical-scroll-proportion="0.94541913" vertical-offset="2252" max-vertical-offset="3893" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/onGoingJobEmployerFeedback.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_8.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.692307" vertical-offset="408" max-vertical-offset="2584" />
+        <state line="794" column="9" selection-start="25503" selection-end="25503" vertical-scroll-proportion="0.33333334" vertical-offset="13327" max-vertical-offset="18734" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="919" column="9" selection-start="27315" selection-end="27315" vertical-scroll-proportion="0.3489279" vertical-offset="15444" max-vertical-offset="19142" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/short_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="102" selection-start="985" selection-end="985" vertical-scroll-proportion="0.67663044" vertical-offset="91" max-vertical-offset="1071" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="16" selection-start="724" selection-end="3483" vertical-scroll-proportion="0.218" vertical-offset="333" max-vertical-offset="2992" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/left_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="24" selection-start="0" selection-end="2497" vertical-scroll-proportion="0.796" vertical-offset="61" max-vertical-offset="561" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/create_job.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.646" vertical-offset="102" max-vertical-offset="4930" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/forgetPass/step2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="124" selection-start="1195" selection-end="1195" vertical-scroll-proportion="-10.461538" vertical-offset="153" max-vertical-offset="986" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="59" selection-start="1929" selection-end="1929" vertical-scroll-proportion="0.788" vertical-offset="405" max-vertical-offset="1122" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="22" selection-start="785" selection-end="785" vertical-scroll-proportion="0.748" vertical-offset="0" max-vertical-offset="850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="149" selection-start="1327" selection-end="1357" vertical-scroll-proportion="1.394" vertical-offset="0" max-vertical-offset="1751" />
+      </provider>
+    </entry>
+    <entry file="file://E:/Zend/Apache2_/htdocs/edit_Live/att_reset_process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="4" selection-start="720" selection-end="720" vertical-scroll-proportion="0.5756972" vertical-offset="0" max-vertical-offset="3230" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../test/kargoTrack.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/employee_main_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2640" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_apply_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="80" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.5481928" vertical-offset="840" max-vertical-offset="1575" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/job_list/feedbackSendFree.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="137" selection-start="2385" selection-end="2385" vertical-scroll-proportion="0.51" vertical-offset="510" max-vertical-offset="2822" />
+        <state line="30" column="69" selection-start="869" selection-end="869" vertical-scroll-proportion="0.25301206" vertical-offset="504" max-vertical-offset="3486" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/onGoingJobEmployerFeedback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7093496" vertical-offset="349" max-vertical-offset="867" />
+        <state line="57" column="74" selection-start="3474" selection-end="3474" vertical-scroll-proportion="1.1385542" vertical-offset="630" max-vertical-offset="3192" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="45" selection-start="5058" selection-end="5058" vertical-scroll-proportion="0.69076306" vertical-offset="1105" max-vertical-offset="3465" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="58" selection-start="7728" selection-end="7728" vertical-scroll-proportion="0.22088353" vertical-offset="2305" max-vertical-offset="3402" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/employee_publicView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="29" selection-start="4012" selection-end="4012" vertical-scroll-proportion="0.72289157" vertical-offset="1341" max-vertical-offset="5901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/frelancer_publicView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="75" selection-start="3181" selection-end="3181" vertical-scroll-proportion="0.28313252" vertical-offset="1098" max-vertical-offset="6489" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_details_employer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="26" selection-start="5267" selection-end="7508" vertical-scroll-proportion="-3.9285715" vertical-offset="2531" max-vertical-offset="8715" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/awaitingAcceptance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="56" selection-start="4868" selection-end="4868" vertical-scroll-proportion="0.36746988" vertical-offset="1518" max-vertical-offset="3402" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/membership.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="3455" selection-end="3455" vertical-scroll-proportion="0.4939759" vertical-offset="1266" max-vertical-offset="1869" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/welcome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="27" selection-start="637" selection-end="637" vertical-scroll-proportion="0.24796748" vertical-offset="201" max-vertical-offset="4199" />
+        <state line="184" column="54" selection-start="4865" selection-end="4865" vertical-scroll-proportion="0.65773195" vertical-offset="3545" max-vertical-offset="6048" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/header.php">
+    <entry file="file://$PROJECT_DIR$/application/views/employee_edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="156" selection-start="1831" selection-end="1831" vertical-scroll-proportion="0.60960335" vertical-offset="388" max-vertical-offset="867" />
+        <state line="202" column="54" selection-start="19731" selection-end="19731" vertical-scroll-proportion="0.4661017" vertical-offset="4022" max-vertical-offset="4935" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home_header.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="156" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.6367432" vertical-offset="358" max-vertical-offset="867" />
+        <state line="14" column="23" selection-start="439" selection-end="439" vertical-scroll-proportion="0.33271718" vertical-offset="114" max-vertical-offset="12516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/frelancer_main_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="32" selection-start="7666" selection-end="7694" vertical-scroll-proportion="0.005976096" vertical-offset="2020" max-vertical-offset="8143" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../public_html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1494" column="4" selection-start="78963" selection-end="82547" vertical-scroll-proportion="0.5734127" vertical-offset="25109" max-vertical-offset="28135" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-1/new_user_registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="7" selection-start="6687" selection-end="6687" vertical-scroll-proportion="5.068323" vertical-offset="0" max-vertical-offset="11067" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/new_user_registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="341" column="83" selection-start="13916" selection-end="14137" vertical-scroll-proportion="0.70186335" vertical-offset="5458" max-vertical-offset="11067" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/job_list/ajax_joblist.php">
@@ -562,278 +542,102 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/freelancer_list_left.php">
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/onGoingJobEmployer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="47" selection-start="1329" selection-end="1342" vertical-scroll-proportion="-12.038462" vertical-offset="299" max-vertical-offset="799">
-          <folding />
-        </state>
+        <state line="116" column="22" selection-start="8146" selection-end="8146" vertical-scroll-proportion="2.3022773" vertical-offset="860" max-vertical-offset="2516" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ajax_frelancer_list.php">
+    <entry file="file://$PROJECT_DIR$/application/views/frelancer_edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="10" selection-start="2292" selection-end="2292" vertical-scroll-proportion="0.98966944" vertical-offset="82" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="77" selection-start="680" selection-end="719" vertical-scroll-proportion="0.59267735" vertical-offset="132" max-vertical-offset="1105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_apply_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="76" selection-start="2769" selection-end="2769" vertical-scroll-proportion="0.9816934" vertical-offset="540" max-vertical-offset="1275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/page/contactUs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="34" selection-start="736" selection-end="736" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/withoutLogin_jobList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="36" selection-start="3424" selection-end="3424" vertical-scroll-proportion="0.25171626" vertical-offset="1369" max-vertical-offset="1870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/frelancer_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="102" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.21052632" vertical-offset="333" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="25" selection-start="1356" selection-end="1356" vertical-scroll-proportion="1.3226545" vertical-offset="0" max-vertical-offset="850" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="23" selection-start="5825" selection-end="5825" vertical-scroll-proportion="0.7665904" vertical-offset="2215" max-vertical-offset="2652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/page/faq.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="370" column="37" selection-start="74356" selection-end="74356" vertical-scroll-proportion="0.4639376" vertical-offset="0" max-vertical-offset="513">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/page/privacyPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="18" selection-start="0" selection-end="33500" vertical-scroll-proportion="0.9622222" vertical-offset="2627" max-vertical-offset="3196" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/page/termCondition.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="252" selection-end="252" vertical-scroll-proportion="0.035123967" vertical-offset="153" max-vertical-offset="3196">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Zend/Apache2_/htdocs/edit_Live/att_reset_process.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="47" selection-start="7748" selection-end="7748" vertical-scroll-proportion="0.558" vertical-offset="2390" max-vertical-offset="3281">
-          <folding>
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT ID,TO..TBL_ATTEND_LOG_PRE..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT ID,CA..TBL_ATTEND_LOG_PRE..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="select rownu..EFFECTIVE_DATE..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT EFFEC..max..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT max(E..TBL_PAY_EMP_SHIFT_ASSIGN..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT CARD_..TBL_PAY_EMP_PROFILE..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..TBL_PAY_SETTING_SHIFT..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT ID,TO..TBL_ATTEND_LOG..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="UPDATE TBL_A..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="SELECT ID,TO..TBL_ATTEND_LOG..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="UPDATE TBL_A..." />
-            <marker date="1480145471932" expanded="true" signature="-1:-1" placeholder="UPDATE TBL_A..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/freelancer_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="26" selection-start="1589" selection-end="1589" vertical-scroll-proportion="-1.938" vertical-offset="1785" max-vertical-offset="7123">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/employer_profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="29" selection-start="486" selection-end="486" vertical-scroll-proportion="-2.584" vertical-offset="1530" max-vertical-offset="5423">
-          <folding />
-        </state>
+        <state line="311" column="6" selection-start="20070" selection-end="20070" vertical-scroll-proportion="-1.0257937" vertical-offset="5804" max-vertical-offset="11934" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="44" selection-start="629" selection-end="629" vertical-scroll-proportion="0.5633528" vertical-offset="204" max-vertical-offset="1207">
-          <folding />
-        </state>
+        <state line="44" column="56" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.3669355" vertical-offset="566" max-vertical-offset="1173" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/frelancer_publicView.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="26" selection-start="2350" selection-end="2350" vertical-scroll-proportion="0.694" vertical-offset="486" max-vertical-offset="5015">
-          <folding />
-        </state>
+        <state line="1156" column="7" selection-start="17347" selection-end="17347" vertical-scroll-proportion="0.33333334" vertical-offset="19471" max-vertical-offset="64821" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/employee_main_view.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/job_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="81" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.524" vertical-offset="588" max-vertical-offset="1785">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/employee_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="92" selection-start="18865" selection-end="18865" vertical-scroll-proportion="0.7136842" vertical-offset="2993" max-vertical-offset="3825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="2751" selection-end="2751" vertical-scroll-proportion="0.772" vertical-offset="668" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_details_employer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="31" selection-start="2665" selection-end="2665" vertical-scroll-proportion="0.7376033" vertical-offset="867" max-vertical-offset="6409">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="36" selection-start="3248" selection-end="3263" vertical-scroll-proportion="0.3429752" vertical-offset="1126" max-vertical-offset="2278">
+        <state line="520" column="5" selection-start="15548" selection-end="15548" vertical-scroll-proportion="1.0706638" vertical-offset="8340" max-vertical-offset="9010">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/job_list/job_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="72" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.2788671" vertical-offset="722" max-vertical-offset="1428">
+        <state line="51" column="17" selection-start="2593" selection-end="2593" vertical-scroll-proportion="0.8736617" vertical-offset="459" max-vertical-offset="1955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/freelancer_list_left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="14" selection-start="970" selection-end="970" vertical-scroll-proportion="-0.18375242" vertical-offset="469" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/withoutLogin_jobList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="55" selection-start="1701" selection-end="1701" vertical-scroll-proportion="0.23017408" vertical-offset="578" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/job_list_left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="36" selection-start="665" selection-end="665" vertical-scroll-proportion="-0.7234042" vertical-offset="612" max-vertical-offset="1479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/job_list/ajax_spe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="68" selection-start="343" selection-end="343" vertical-scroll-proportion="0.3617021" vertical-offset="0" max-vertical-offset="517">
+          <folding>
+            <marker date="1481993223863" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="514">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="575" column="1" selection-start="171423" selection-end="171423" vertical-scroll-proportion="0.93385214" vertical-offset="9295" max-vertical-offset="9877">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/packageInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="40" selection-start="1408" selection-end="1408" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/admin_panel_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="39" selection-start="520" selection-end="528" vertical-scroll-proportion="0.3326316" vertical-offset="165" max-vertical-offset="30685">
+        <state line="1861" column="39" selection-start="49718" selection-end="49718" vertical-scroll-proportion="0.36820084" vertical-offset="31410" max-vertical-offset="32130">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin_panel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="38" selection-start="3794" selection-end="3812" vertical-scroll-proportion="0.6296296" vertical-offset="2091" max-vertical-offset="3553">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/page/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="14" selection-start="242" selection-end="242" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="697">
-          <folding>
-            <marker date="1479920974906" expanded="true" signature="31:241" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="63:226" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="93:211" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="133:192" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="278:3153" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="310:3138" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="340:3123" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="391:3104" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="613:1401" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="684:1374" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="747:1343" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="1623:3080" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="1682:3053" placeholder="..." />
-            <marker date="1479920974906" expanded="true" signature="1832:3022" placeholder="..." />
-            <marker date="1479920974906" expanded="false" signature="1849:1866" placeholder="..." />
-            <marker date="1479920974906" expanded="false" signature="2146:2163" placeholder="..." />
-            <marker date="1479920974906" expanded="false" signature="2233:2250" placeholder="..." />
-            <marker date="1479920974906" expanded="false" signature="2316:2333" placeholder="..." />
-            <marker date="1479920974906" expanded="false" signature="2535:2552" placeholder="..." />
-            <marker date="1479920974906" expanded="false" signature="2718:2735" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/user_panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="57" selection-start="7530" selection-end="7530" vertical-scroll-proportion="-6.5384617" vertical-offset="3332" max-vertical-offset="6052">
-          <folding>
-            <element signature="e#3350#3899#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/frelancer_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="28" selection-start="4835" selection-end="4835" vertical-scroll-proportion="0.558" vertical-offset="1846" max-vertical-offset="2516">
+        <state line="100" column="54" selection-start="3455" selection-end="3455" vertical-scroll-proportion="1.3503056" vertical-offset="1037" max-vertical-offset="7412">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/frelancer_edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="290" column="24" selection-start="24521" selection-end="30590" vertical-scroll-proportion="58.576923" vertical-offset="6453" max-vertical-offset="10217">
-          <folding>
-            <element signature="e#22110#22136#0" expanded="true" />
-            <element signature="e#30953#30979#0" expanded="true" />
-            <element signature="e#33658#38214#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/frelancer_main_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="129" selection-start="11643" selection-end="11643" vertical-scroll-proportion="-0.088" vertical-offset="3682" max-vertical-offset="7038">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#3;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#5;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#6;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#6;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#span#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#output#0;n#div#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#8;n#div#0;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#4;n#main#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

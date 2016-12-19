@@ -9,8 +9,6 @@ class Login extends CI_Controller {
 	 
 	public function index()
 	{
-		 
-		 
 		if(isset($_REQUEST['submit']))
 		{	 
 		
@@ -48,7 +46,7 @@ class Login extends CI_Controller {
 				} 
 				else 
 			    {
-					$this->session->set_flashdata('flasherror', 'Password Doesnot match');
+					$this->session->set_flashdata('flasherror', 'Your username and password don\'t match');
 			   }
 	     }
 	       

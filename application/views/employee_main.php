@@ -23,9 +23,9 @@
 						<div class="col-md-3">
 							<span style="font-weight:bold; font-size:20px;"><?php echo $user_details_info->name; ?><br/></span>                    
 							<br/><br/>
-							<div style="padding-bottom:5px;"><b>User Type: <?php echo $this->session->userdata('user_type'); ?> </b></div>
-							<div style="padding-bottom:5px;"><b>Location: </b><?php echo $user_details_info->complete_address; ?></div>
-							<div style="padding-bottom:5px;"><b>Phone: </b><?php echo $user_details_info->phone_no; ?></div>
+							<div style="padding-bottom:5px;"><b>User Type: <?php echo $this->session->userdata('user_type'); ?> </b></div><br>
+							<div style="padding-bottom:5px;"><b>Location: </b><?php echo $user_details_info->complete_address; ?></div><br>
+							<div style="padding-bottom:5px;"><b>Phone: </b><?php echo $user_details_info->phone_no; ?></div><br>
 							<div style="padding-bottom:5px;"><b>Email: </b><?php echo $user_details_info->user_email; ?> </div>
 						</div>
                         

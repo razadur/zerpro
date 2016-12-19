@@ -26,8 +26,8 @@ class User_panel extends MY_Controller{
 		$user_email = $data['user_details']->user_email;
 		$data['user_details_info'] = $this->admin_panel_model->user_details_info($user_email);
 		$data['uploadedImage'] = $this->admin_panel_model->uploadedImage($user_id);
-//        echo '<pre>';
-//        print_r($data);die;
+		$data['packageInfo'] = $this->admin_panel_model->packageInfo($user_id);
+//        echo '<pre>'; print_r(count($data['packageInfo']));die;
 		/*if($data['user_details_info'])
 		
 		{*/
@@ -43,8 +43,22 @@ class User_panel extends MY_Controller{
 //				}
 //				else
 				{
-					$this->load->view('frelancer_main_view',$data);
-					//$this->load->view('frelancer_main',$data);
+                    if(empty($data['packageInfo'][0]->user_id)){
+                        $this->load->view('packageInfo',$data);
+                    }else{
+                        $start_date = strtotime($data['packageInfo'][0]->start_date);
+                        $end_date = strtotime($data['packageInfo'][0]->end_date);
+                        $today = strtotime(date('Y-m-d'));
+                        if($data['packageInfo'][0]->job_geting_package == 1){
+                            $this->load->view('frelancer_main_view',$data);
+                        }elseif(empty($data['packageInfo'][0]->job_geting_package) && $start_date <= $today && $end_date >= $today ){
+                            $this->load->view('frelancer_main_view',$data);
+                        }else{
+                            $this->session->set_flashdata('flasherror', 'Your Monthly package is expired please renew it!');
+                            $this->load->view('frelancer_main_view',$data);
+//                            die(print_r('<br>'.'please renew your package'));
+                        }
+                    }
 				}
 					
 			}
@@ -81,6 +95,20 @@ class User_panel extends MY_Controller{
 		
 		
 	}
+	public function package($package='')
+    {   $this->load->model('admin_panel_model');
+        $data['user_id'] = $this->session->userdata('userid');
+        if($package=='') $package = $this->uri->segment(3);
+        if($package == 1){
+            $data['start_date'] = date('Y-m-d');
+            $data['end_date'] = date('Y-m-d', strtotime("+30 days"));
+            $this->admin_panel_model->packageInfoAdd($data);
+        }elseif($package == 2){
+            $data['job_geting_package'] = 1;
+                $this->admin_panel_model->packageInfoAdd($data);
+        }
+        redirect('index.php/user_panel');
+    }
 	public function update_profile()
 	{
 		$user_id = $this->session->userdata('userid');
@@ -123,7 +151,8 @@ class User_panel extends MY_Controller{
 	}
 	
 	public function update_user_info()
-	{ //echo '<pre>'; die(print_r($_POST));
+	{
+//	echo '<pre>'; die(print_r($_POST));
 		if($this->input->post('update'))
 		{
             if(!empty($_FILES['user_pic_one']['name'])){
@@ -181,7 +210,7 @@ class User_panel extends MY_Controller{
 
 			$this->load->model('admin_panel_model');
 			
-		   //$this->admin_panel_model->update_user_info_edit($user_id,$data);
+		   $this->admin_panel_model->update_user_info_edit($user_id,$data);
 
             $jobCounter = $this->input->post('jobCounter');
             $eduCounter = $this->input->post('eduCounter');
@@ -238,7 +267,6 @@ class User_panel extends MY_Controller{
 	
 	public function add_new_job()
 	{
-	
 		$config['upload_path'] = './images/employeer_file/';
        $config['allowed_types'] = 'pdf|gif|jpg|png';
 	   $config['post_max_size'] = '200M';
@@ -248,9 +276,7 @@ class User_panel extends MY_Controller{
 
        $this->upload->initialize($config);
        
-    //   echo '<pre>';
-//       print_r($_FILES);
-//       exit();
+//       echo '<pre>'; print_r($_FILES); exit();
        
        $this->upload->do_upload('attached_file');
        $image_des=$this->upload->data();
@@ -353,6 +379,48 @@ class User_panel extends MY_Controller{
         redirect( 'index.php/login' );
 
     }
+
+    public function message_send()
+    {
+        $data['emp_id']=$this->input->post('emp_id');
+        $data['freelancer_id']=$this->input->post('freelancer_id');
+        $data['message']=$this->input->post('message');
+        $data['subject']=$this->input->post('subject');
+        $data['sender_by']=$this->input->post('sender_by');
+        $freelancer_id =$this->input->post('freelancer_id');
+        $data['parent_id'] =$this->input->post('parent_id');
+
+        $this->load->model('admin_panel_model');
+        $this->admin_panel_model->save_message($data);
+
+        redirect("index.php/withoutLogin_jobList/frelancer_public_profile/".$freelancer_id);
+    }
+    public function emp_publicProfile(){
+        $user_id = $this->uri->segment(3);
+        $this->load->model('admin_panel_model');
+        $data['user_details'] = $this->admin_panel_model->user_details($user_id);
+        $user_email = $data['user_details']->user_email;
+//        $user_type = $data['user_details']->user_type;
+        $data['user_details_info'] = $this->admin_panel_model->user_details_info($user_email);
+//        echo '<pre>';
+//        die(print_r($data));
+        $this->load->view('employee_publicView', $data);
+    }
+    public function package_update(){
+        $this->load->model('admin_panel_model');
+        $data['user_id'] = $this->session->userdata('userid');
+        $data['start_date'] = date('Y-m-d');
+        $data['end_date'] = date('Y-m-d', strtotime("+30 days"));
+        $this->admin_panel_model->packageInfoAdd($data);
+        redirect('index.php/user_panel');
+    }
+    public function membership(){
+        $this->load->model('admin_panel_model');
+        $userid = $this->session->userdata('userid');
+        $data['package_info'] = $this->admin_panel_model->packageInfo($userid);
+        $this->load->view('membership',$data);
+    }
+
 }
 
 /* End of file welcome.php */

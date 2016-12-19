@@ -45,6 +45,7 @@
                           
                           <div class="col-md-12">
                           <button type="submit" class="submit_btn btn btn-default" name="submit">Login</button>
+                          <a href="<?php echo base_url();?>index.php/welcome/forgetPassStep1" class="submit_btn btn btn-default">Forget Password</a>
                           </div>
 						   <div class="clearfix"></div>
 						   <br/>

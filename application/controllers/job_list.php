@@ -109,9 +109,7 @@ class Job_list extends MY_Controller {
 		  
 		  $user_email = $data['get_job_details']->user_email;
 		 $data['employeer_info'] = $this->admin_panel_model->employeer_info($user_email);
-		 /*echo '<pre>';
-		 print_r($data);
-		 die();*/
+//		 echo '<pre>'; print_r($data); die();
 		
 		if($this->session->userdata('user_type') == 'Frelancer')
 		{
@@ -348,11 +346,26 @@ class Job_list extends MY_Controller {
 	}
 
 	public function job_application()
-	{   $job_id = $data['job_id']=$this->input->post('job_id');
+	{
+        $job_id = $data['job_id']=$this->input->post('job_id');
         $data['budget']=$this->input->post('budget');
         $data['work_days']=$this->input->post('work_days');
         $data['applying_massage']=$this->input->post('applying_massage');
         $data['freelancer_id']=$this->input->post('freelancer_id');
+
+        $fileName = $job_id.'_'.$data['freelancer_id'].'_'.date('Ymd');
+        $config['upload_path'] = './images/employeer_file/';
+        $config['allowed_types'] = 'pdf|gif|jpg|png';
+        $config['post_max_size'] = '200M';
+        $config['upload_max_filesize'] = '100M';
+        $config['file_name'] = $fileName;
+
+        $this->upload->initialize($config);
+
+        $this->upload->do_upload('attached_file');
+        $image_des=$this->upload->data();
+        $file_name = $image_des['file_name'];
+        $data['attachment']= $file_name;
 
         $this->load->model('admin_panel_model');
         $this->admin_panel_model->save_job_apply($data);
@@ -427,24 +440,26 @@ class Job_list extends MY_Controller {
         $user_type = $this->session->userdata('user_type');
 
         $this->load->model('admin_panel_model');
-        $data['feedback_job_ids'] = $this->admin_panel_model->jobFeedback($jobId);
         if($user_type == 'Frelancer'){
+            $data['feedback_job_ids'] = $this->admin_panel_model->jobFeedback($jobId,1);
             $this->load->view('job_list/feedbackSendFree',$data);
         }else{
+            $data['feedback_job_ids'] = $this->admin_panel_model->jobFeedback($jobId,2);
             $this->load->view('job_list/onGoingJobEmployerFeedback',$data);
         }
     }
     public function feedbackSendEmp(){
         $user_type = $this->session->userdata('user_type');
         if($user_type != 'Frelancer'){
+            $data['emp_id'] = $this->session->userdata('userid');
             $data['emp_free']=$this->input->post('ratedValue');
-            $jobId=$this->input->post('jobId');
             $data['emp_free_msg']=$this->input->post('rateComment');
         }else{
+            $data['free_id'] = $this->session->userdata('userid');
             $data['free_emp']=$this->input->post('ratedValue');
-            $jobId=$this->input->post('jobId');
             $data['free_emp_msg']=$this->input->post('rateComment');
         }
+        $jobId=$this->input->post('jobId');
         $this->load->model('admin_panel_model');
         $this->admin_panel_model->feedbackSendProcess($data,$jobId);
         if($user_type != 'Frelancer'){ redirect("index.php/job_list/onGoingJob");}
@@ -463,12 +478,46 @@ class Job_list extends MY_Controller {
         $this->load->view('job_list/feedbackSendFree',$data);
     }
     public function filteredJob(){
-        print_r($_SESSION);die;
-
         $this->load->model('admin_panel_model');
         $data['get_job_lists'] = $this->admin_panel_model->filteredJob($_POST);
-        //print_r($data);
         $this->load->view('job_list/ajax_joblist',$data);
+    }
+    public function filteredSpe(){
+        $ctg = $_POST['ctg'];
+        $this->load->model('admin_panel_model');
+        $data['get_spc_lists'] = $this->admin_panel_model->filteredSpe($ctg);
+        $this->load->view('job_list/ajax_spe',$data);
+    }
+    public function awaitingAcceptance(){
+        $userId = $this->session->userdata('userid');
+        $this->load->model('admin_panel_model');
+        if($_POST){
+            $token = $this->input->post('acceptance_token');
+            $apply_id = $this->input->post('id');
+            if($token == 1){$this->admin_panel_model->awaitingAcceptance_accept($apply_id);}
+            elseif($token == 0){$this->admin_panel_model->awaitingAcceptance_reject($apply_id);}
+        }else{
+            $data['awaitingAcceptanceJob'] = $this->admin_panel_model->awaitingAcceptance($userId);
+            $this->load->view('job_list/awaitingAcceptance',$data);
+        }
+    }
+    public function perJobPay(){
+        $apply_id = $this->uri->segment(3);
+        $payAmt= $this->uri->segment(4);
+        $monthlyPackage= $this->uri->segment(5);
+        $this->load->model('admin_panel_model');
+        $this->admin_panel_model->awaitingAcceptance_accept($apply_id);
+        $this->admin_panel_model->payAmt($payAmt);
+
+        $userId = $this->session->userdata('userid');
+        if($monthlyPackage == 1){
+            $data['user_id'] = $userId;
+            $data['start_date'] = date('Y-m-d');
+            $data['end_date'] = date('Y-m-d', strtotime("+30 days"));
+            $this->admin_panel_model->packageInfoAdd($data);
+        }
+        $data['awaitingAcceptanceJob'] = $this->admin_panel_model->awaitingAcceptance($userId);
+        $this->load->view('job_list/awaitingAcceptance',$data);
     }
 }
 

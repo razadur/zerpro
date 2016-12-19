@@ -20,15 +20,43 @@
 	<section class="main-containt">
 		<div class="container">
 			<div class="row">
-				<?php include('left_menu.php');?>
+<!--				--><?php //include('left_menu.php');?>
+                <aside class="col-md-3 col-sm-3">
+                    <?php if($this->session->userdata('user_type') == 'Employeer'){ ?>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/user_panel">Profile</a>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/user_panel/create_job">Create Job</a>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list">Joblist</a>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/shortlist">Shortlist</a>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/message">Message</a>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/notification">Notification</a>
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle active" href="<?php echo base_url();?>index.php/job_list/onGoingJob">On Going Jobs</a>
+                    <?php } ?>
+
+                    <?php if($this->session->userdata('userid')){ ?>
+
+                        <?php
+
+
+                        if($this->session->userdata('user_type') == 'Frelancer'){ ?>
+                            <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/user_panel">Profile</a>
+                            <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/message">Message</a>
+                            <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/notification">Notification</a>
+                            <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle active" href="<?php echo base_url();?>index.php/job_list/onGoingJob">On Going Jobs</a>
+                            <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/awaitingAcceptance">Awaiting Acceptance</a>
+                        <?php } ?>
+
+                        <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/login/logout">Logout</a>
+                    <?php } ?>
+
+                </aside>
                 <main class="col-md-9 col-sm-9">
                  	<div class="candidate_panel">
 					  <h2>On Going Jobs</h2>
                       
 					  <div class="applicants">
-					<?php foreach($onGoing_job_ids as $onGoing_job_id){
+					<?php /*echo '<pre>';print_r($onGoing_job_ids);die;*/ foreach($onGoing_job_ids as $onGoing_job_id){
                         ?>
-                          <div class="media-body">
+                          <div class="col-md-12">
                               <div class="col-md-9">
                                   <h3><?php echo $onGoing_job_id->job_title; ?></h3>
                                   <p><?php echo $onGoing_job_id->job_description; ?></p>
@@ -46,12 +74,13 @@
                                   </dl>
                               </div>
                               <div class="col-md-3">
-                                  <?php if($this->session->userdata('user_type') != 'Frelancer'  && ($onGoing_job_id->status == 0)){?>
+                                  <?php if($this->session->userdata('user_type') != 'Frelancer'  && ($onGoing_job_id->status == 1)){?>
                                   <button id="closeJob" class="btn btn-block btn-primary" onclick="closeJob(<?php echo $onGoing_job_id->id ?>)">Close Job</button>
                                   <?php }?>
                                   <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#myModal_<?php echo $onGoing_job_id->fl_id; ?>" style="text-align: center">Contact</button>
                               </div>
                           </div>
+                        <div class="clearfix"></div>
                         <!--/////////////////////////model////////////////////-->
                         <div class="modal fade" id="myModal_<?php echo $onGoing_job_id->fl_id; ?>" role="dialog">
                             <div class="modal-dialog modal-sm">
@@ -100,16 +129,15 @@
 <script>
     function closeJob(jobId){
         var data = 'id='+jobId;
-        $.ajax({
-            url:'<?php echo base_url();?>index.php/Job_list/closeJob',
-            data: data,
-            type:'POST',
-            success:function(data){
-                //$('#closeJob').hide();
-                location.href = "<?php echo base_url();?>index.php/Job_list/jobFeedback/"+jobId;
-                //alert(data);
-                //document.getElementById('hire_btn').firstChild.data = 'Hired';
-            }
-        });
+        if(confirm("Are you sure?")){
+            $.ajax({
+                url:'<?php echo base_url();?>index.php/Job_list/closeJob',
+                data: data,
+                type:'POST',
+                success:function(data){
+                    location.href = "<?php echo base_url();?>index.php/Job_list/jobFeedback/"+jobId;
+                }
+            });
+        }
     }
 </script>

@@ -169,20 +169,7 @@ class Welcome extends CI_Controller {
 		$data['user_email']=$this->input->post('user_email');
 		$data['user_city']=$this->input->post('user_city');
 		$data['user_tel']=$this->input->post('user_tel');
-		$data['user_address']=$this->input->post('user_address');
 		$data['user_password']=$this->input->post('user_password');
-		
-		
-		
-$msg = "Thank You For Registration!";
-
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-
-// send email
-mail($user_email,"New Registration",$msg);
-
-		
 		
 		/*print_r($data);
 		die();*/
@@ -190,14 +177,22 @@ mail($user_email,"New Registration",$msg);
 		
 	    $this->load->model('admin_panel_model');
         if($this->admin_panel_model->save_new_user_registration($data) == 1){
-		   $this->session->set_flashdata('flasherror', 'Your message sent successfully!');
+		   $this->session->set_flashdata('flasherror', 'Your Registration successful!');
+            $msg = "Thank You For Registration!";
+            // use wordwrap() if lines are longer than 70 characters
+            $msg = wordwrap($msg,70);
+            // send email
+            mail($user_email,"New Registration",$msg);
+            redirect("index.php/welcome/login");
         }else{
             $this->session->set_flashdata('flasherror', 'This e-mail address already added!');
+            $this->load->view('new_user_registration',$data);
         }
-		redirect("index.php/welcome/registration");
 		//$this->load->view('new_user_registration');
-	
-	}
+
+
+
+    }
 	
 	public function login()
 	{
@@ -236,6 +231,52 @@ mail($user_email,"New Registration",$msg);
 		
 		$this->load->view('job_list/job_list',$data);
 	}
+
+    public function forgetPassStep1(){
+        $this->load->view('header');
+        $this->load->view('forgetPass/step1');
+        $this->load->view('footer');
+    }
+     public function step2(){
+         $this->load->view('header');
+         $this->load->view('forgetPass/step2');
+         $this->load->view('footer');
+    }
+
+    public function forgetPassStep2(){
+        $e = $this->input->post('user_email');
+        $email['email'] = $this->input->post('user_email');
+
+        $this->load->model('admin_panel_model');
+        $num_row = $this->admin_panel_model->emailChk($e);
+        if($num_row != 0){
+            $this->load->view('header');
+            $this->load->view('forgetPass/step2',$email);
+            $this->load->view('footer');
+        }else{
+            $this->session->set_flashdata('flasherror', 'Your Email address don\'t match');
+            redirect('index.php/welcome/forgetPassStep1');
+        }
+    }
+    public function passRecover(){
+        $email = $em['email'] = $this->input->post('user_email');
+        $p1 = $this->input->post('user_pass1');
+        $p2 = $this->input->post('user_pass2');
+        if(!empty($p1) && !empty($p2) && $p1 == $p2){
+            $this->load->model('admin_panel_model');
+            if(!empty($email)){
+                $data['user_password'] = $p1;
+                $this->admin_panel_model->passRecover($email,$data);
+                $this->session->set_flashdata('flasherror', 'Your Password has changed.');
+                $this->load->view('login');
+            }
+        }else{
+            $this->session->set_flashdata('flasherror', 'Password don\'t match');
+            $this->load->view('header');
+            $this->load->view('forgetPass/step2',$em);
+            $this->load->view('footer');
+        }
+    }
 }
 
 /* End of file welcome.php */

@@ -28,7 +28,6 @@ class Admin_panel_Model extends CI_Model {
             $dataUp['name'] = $data['first_name'].' '.$data['last_name'];
             $dataUp['user_email'] = $data['user_email'];
             $dataUp['phone_no'] = $data['user_tel'];
-            $dataUp['phone_no'] = $data['user_tel'];
             $dataUp['complete_address'] = $data['user_address'];
             $dataUp['city'] = $data['user_city'];
             $this->db->insert('user_profile_info',$dataUp);
@@ -456,7 +455,7 @@ class Admin_panel_Model extends CI_Model {
 	}
 
     public function eduAdd($data){
-        $this->db->insert('user_edu_info_',$data);
+        $this->db->insert('user_edu_info',$data);
     }
     public function jobAdd($data){
         $this->db->insert('user_job_info',$data);
@@ -1713,19 +1712,27 @@ class Admin_panel_Model extends CI_Model {
         $feedbackData['job_id'] = $jobId;
         $this->db->insert('job_feedback',$feedbackData);
     }
-    public function jobFeedback($id=''){
-        $this->db->select('job_feedback.id, job_feedback.job_id, job_title,
+    public function jobFeedback($id='',$user=1){
+        if($user == 1){
+            $this->db->select('job_feedback.id, job_feedback.job_id, job_title,
                             user_name employer ,emp_free,emp_free_msg,
                             user_profile_info.name AS freelancer,free_emp,free_emp_msg');
-        $this->db->from('job_feedback');
-        $this->db->join('manage_job', 'manage_job.id = job_feedback.job_id');
-        $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
-        $this->db->join('user_profile_info', 'user_profile_info.id = job_applications.freelancer_id');
-        if(!empty($id)){
-            $this->db->where('manage_job.id',$id);
+            $this->db->from('job_feedback');
+            $this->db->join('manage_job', 'manage_job.id = job_feedback.job_id');
+            $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
+            $this->db->join('user_profile_info', 'user_profile_info.user_id = job_applications.freelancer_id');
+            if(!empty($id)){
+                $this->db->where('manage_job.id',$id);
+            }else{
+                $this->db->where("free_emp is null or  free_emp = ''");
+                $this->db->where("free_emp_msg is null or free_emp = ''");
+            }
         }else{
-            $this->db->where("free_emp is null or  free_emp = ''");
-            $this->db->where("free_emp_msg is null or free_emp = ''");
+            $this->db->select('manage_job.id job_id, job_title, manage_job.user_id employer_id, user_name employer, freelancer_id, user_profile_info.name AS freelancer');
+            $this->db->from('manage_job');
+            $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
+            $this->db->join('user_profile_info', ' user_profile_info.user_id = job_applications.freelancer_id');
+            $this->db->where('manage_job.id',$id);
         }
         $query_result=$this->db->get();
         $result=$query_result->result();
@@ -1765,6 +1772,14 @@ class Admin_panel_Model extends CI_Model {
         $result=$query_result->result();
         return $result;
     }
+    public function filteredSpe($data){
+        $this->db->select('*');
+        $this->db->from('spcialization');
+        $this->db->where('category_name',$data);
+        $query = $this->db->get();
+        $result=$query->result();
+        return $result;
+    }
     public function freelancerList($data=''){
         $this->db->select('*');
         $this->db->from('user_profile_info');
@@ -1781,9 +1796,9 @@ class Admin_panel_Model extends CI_Model {
         if(!empty($data['search'])){
             $search = $data['search']; $this->db->where("name LIKE '%$search%'");
         }
+        $count = !isset($data['SpecialtyCount']) ? 0 : $data['SpecialtyCount'];
+        if($count>1){
 
-        if($data['SpecialtyCount']>1){
-            $count = $data['SpecialtyCount'];
             for($i=1;$i<$count;$i++){
                 $var = 'Specialty'.$i;
                 if(!empty($data[$var])){
@@ -1796,7 +1811,78 @@ class Admin_panel_Model extends CI_Model {
         $result=$query_result->result();
         return $result;
     }
+    public function emailChk($data){
+        $this->db->select('*');
+        $this->db->from('user_profile_info');
+        $this->db->where("user_email = '$data'");
+        $query_result=$this->db->get();
+        $result=$query_result->num_rows();
+        return $result;
+    }
+    public function passRecover($email,$data){
+        $this->db->where("user_email = '$email'");
+        $this->db->update('user_registration_info',$data);
+    }
+    public function awaitingAcceptance($id){
+        $this->db->select('manage_job.id,manage_job.user_id,job_applications.id job_applications_id,job_title,job_description,manage_job.category,job_applications.budget,`experience`,qualification,vacancy_type,user_profile_info.user_id fl_id,name,manage_job.status');
+        $this->db->from('manage_job');
+        $this->db->join('job_applications', 'manage_job.id = job_applications.job_id');
+        $this->db->join('user_profile_info', 'user_profile_info.user_id = job_applications.freelancer_id');
+        $this->db->where('freelancer_id',$id);
+        $this->db->where('hiring_status',1);
+        $this->db->where('acceptance_status',0);
+        $this->db->where('status',1);
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
+    public function awaitingAcceptance_accept($data){
+        $this->db->where("id = '$data'");
+        $d=array(
+            'acceptance_status'=>1
+        );
+        $this->db->update('job_applications',$d);
+    }
+    public function awaitingAcceptance_reject($data){
+        $this->db->where("id = '$data'");
+        $d=array(
+            'hiring_status'=>0
+        );
+        $this->db->update('job_applications',$d);
+    }
+    public function packageInfo($data){
+        $this->db->select('user_id,job_geting_package,start_date,end_date,MAX(create_date) create_date');
+        $this->db->from('package_info');
+        $this->db->where('user_id',$data);
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
+    public function packageInfoAdd($data){
+        $this->db->insert('package_info',$data);
+    }
+    public function payAmt($amount){
+        $data['user_id'] = $this->session->userdata('userid');
+        $data['amount'] = $amount;
+        $this->db->insert('pay_amount',$data);
+    }
+    public function readStar($userId = ''){
+        if($userId == '') $userId = $this->session->userdata('userid');
+        $data['user_details'] = $this->admin_panel_model->user_details($userId);
+        $user_email = $data['user_details']->user_email;
+        $user_type = $this->admin_panel_model->get_user_type($user_email);
+        if($user_type == 'Frelancer'){
+            $this->db->select('AVG(emp_free) star, COUNT(id) job_done');
+            $this->db->from('job_feedback');
+            $this->db->where('free_id',$userId);
+        }else{
+            $this->db->select('AVG(free_emp) star, COUNT(id) job_done');
+            $this->db->from('job_feedback');
+            $this->db->where('emp_id',$userId);
+        }
+        $query_result=$this->db->get();
+        $result=$query_result->result();
+        return $result;
+    }
 }
 ?>
-
-

@@ -13,7 +13,17 @@
 	<section class="main-containt">
 		<div class="container">
 			<div class="row">
-				<?php include('left_menu.php');?>
+<!--				--><?php //include('left_menu.php');?>
+<aside class="col-md-3 col-sm-3">
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle active" href="<?php echo base_url();?>index.php/user_panel">Profile</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/user_panel/create_job">Create Job</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list">Joblist</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/shortlist">Shortlist</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/message">Message</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/notification">Notification</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/job_list/onGoingJob">On Going Jobs</a>
+    <a style="width:100%; text-align:left" class="btn btn-primary dropdown-toggle" href="<?php echo base_url();?>index.php/login/logout">Logout</a>
+</aside>
                 <main class="col-md-9 col-sm-9">
                  	<div class="candidate_panel">
                     	<h2>Welcome <?php echo $user_details_info->name; ?></h2>
@@ -190,8 +200,8 @@
                            		<input type="Text" class="form-control" id="name" placeholder="" name="alt_email_address"  value="<?php echo $user_details_info->user_email; ?>" readonly>
                          	</div>
                             <div class="form-group">
-                            	<label for="exampleInputEmail1">Country</label>
-                           		<input type="hidden" class="form-control" id="name" placeholder="" name="country" value="<?php if(!empty($user_details_info->country) )echo $user_details_info->country; else echo 'Puerto Rico' ?>"/>
+                            	<label>Country</label>
+                           		<input readonly style="background: #fff" class="form-control" id="name" placeholder="" name="country" value="<?php if(!empty($user_details_info->country) )echo $user_details_info->country; else echo 'Puerto Rico' ?>"/>
                          	</div>
                             <div class="form-group">
                             	 <label for="exampleInputEmail1">Complete Address (Optional)</label>

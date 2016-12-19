@@ -36,20 +36,19 @@
         </div>
 
         <div class="filter-group specialty-filter">
-            <label>Specialty</label>
-            <?php
-            $this->db->from('spcialization');
-            $query = $this->db->get();
-            $n=1;
-            foreach($query->result() as $row){
-            echo "
-            <div class='form-group'>
-                <input type='checkbox' onclick='formSubmit()' name='Specialty$n' value='$row->id'> $row->spcialization
-            </div>";$n++;
-            }?>
-            <input type="hidden" name="SpecialtyCount" value="<?php echo $n;?>">
+            <select id="state" class="form-control">
+                <option value="">Select Category</option>
+                <?php
+                $this->db->select('*');
+                $this->db->from('category');
+                $query = $this->db->get();
+                $n=1;
+                foreach($query->result() as $row){
+                echo "<option value='$row->category_name'> $row->category_name</option>";
+                }?>
+            </select>
+            <div id="spe"></div>
         </div>
-<!--<button class="btn btn-block btn-primary">Submit</button>-->
     </div>
     </form>
 </aside>
@@ -59,15 +58,25 @@
         var jobList = $('#jobList').html('');
         var sendData = $('#jobFilterList').serialize();
         $.ajax({
-<!--            url: '--><?php //echo base_url();?><!--index.php/job_list/filteredJob',-->
             url: '<?php echo base_url();?>index.php/withoutLogin_jobList',
             data: sendData,
             type:'POST',
             success:function(data){
-                //alert(data);
                 var jobList = $('#jobList').html(data);
             }
         });
-
     }
+
+    $('#state').change(function(){
+        var ctg = $(this).val();
+        var datas = 'ctg='+ctg;
+        $.ajax({
+            url: '<?php echo base_url();?>index.php/job_list/filteredSpe',
+            data: datas,
+            type:'POST',
+            success:function(data){
+                $('#spe').html(data);
+            }
+        });
+    });
 </script>

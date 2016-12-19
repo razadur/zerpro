@@ -41,6 +41,20 @@
                         <div style="padding-bottom:5px;"><b>Location: </b><?php echo $user_details_info->city; ?></div>
                         <div style="padding-bottom:5px;"><b>Phone: </b><?php echo $user_details_info->phone_no; ?></div>
                         <div style="padding-bottom:5px;"><b>Email: </b> <?php echo $user_details->user_email; ?></div>
+                        <div style="padding-bottom:5px;"><b>Rating: </b>
+                            <?php
+                            $user_id = $user_details_info->user_id;
+                            $this->load->model('admin_panel_model');
+                            $star = $this->admin_panel_model->readStar($user_id);
+                            $fBk = intval($star[0]->star);?>
+                            <div>
+                                <i style="cursor: pointer" class="fa fa-2x fa-star<?php echo $fBk>=1 ? '' : '-o';?>"></i>
+                                <i style="cursor: pointer" class="fa fa-2x fa-star<?php echo $fBk>=2 ? '' : '-o';?>"></i>
+                                <i style="cursor: pointer" class="fa fa-2x fa-star<?php echo $fBk>=3 ? '' : '-o';?>"></i>
+                                <i style="cursor: pointer" class="fa fa-2x fa-star<?php echo $fBk>=4 ? '' : '-o';?>"></i>
+                                <i style="cursor: pointer" class="fa fa-2x fa-star<?php echo $fBk>=5 ? '' : '-o';?>"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-3" style="text-align:center;">
                         <?php $userid = $this->session->userdata('userid');
@@ -63,7 +77,7 @@
                     </div>
                     <div class="col-md-3" style="text-align:center;">
                         <br/>
-                        <span style="font-weight:bold; font-size:30px; text-align:center">0</span><br/>
+                        <span style="font-weight:bold; font-size:30px; text-align:center"><?php echo $star[0]->job_done ?></span><br/>
                         <span style="font-weight:bold; font-size:17px; text-align:center">Jobs Completed</span>
                     </div>
 
@@ -166,7 +180,7 @@
                 </div>
                 <div class="modal-body">
                     <?php  $get_last_subject_id = $this->admin_panel_model->get_last_subject_id(); ?>
-                    <form role="form" action="<?php echo base_url();?>index.php/job_list/message_send" method="POST"  enctype="multipart/form-data">
+                    <form role="form" action="<?php echo base_url();?>index.php/user_panel/message_send" method="POST"  enctype="multipart/form-data">
                         <input type="text" name="subject" style="width:100%" placeholder="Subject"/><br/>
 
                         <textarea name="message" style="width:100%"></textarea>
